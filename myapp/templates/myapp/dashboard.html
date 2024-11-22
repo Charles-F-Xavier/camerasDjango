@@ -1,0 +1,116 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+{% block content %}
+    <main class="py-2">
+        <div class="container-fluid">
+            <div class="row justify-content-around">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                    Dashboard
+                    <div class="form-check form-switch">
+                        <label class="form-check-label" for="toggleview">Día /</label>
+                        <input class="form-check-input" type="checkbox" role="switch" id="toggleview">
+                        <label class="form-check-label" for="toggleview">Hora</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-11 col-md-8 col-lg-8">
+                    <canvas id="dailyTotalChart" width="400" height="200"></canvas>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                        // Obtener los datos desde Django
+                        const dataFromDjango = {{ data_seria|safe }};
+
+                        // Variables para almacenar los totales
+                        let totalsByDate = {};
+                        let totalsByHour = {};
+
+                        // Procesar los datos para obtener la suma de `quantity` por día y por hora
+                        dataFromDjango.forEach(item => {
+                            let date = new Date(item.fields.date);
+                            let dateString = date.toISOString().split('T')[0]; // Formato 'YYYY-MM-DD'
+                            let hourString = `${dateString} ${date.getUTCHours()}:00`; // Formato 'YYYY-MM-DD HH:00'
+
+                            // Sumar por día
+                            if (totalsByDate[dateString]) {
+                                totalsByDate[dateString] += item.fields.quantity;
+                            } else {
+                                totalsByDate[dateString] = item.fields.quantity;
+                            }
+
+                            // Sumar por hora
+                            if (totalsByHour[hourString]) {
+                                totalsByHour[hourString] += item.fields.quantity;
+                            } else {
+                                totalsByHour[hourString] = item.fields.quantity;
+                            }
+                        });
+
+                        // Inicializar la vista como 'día'
+                        let viewMode = 'day';
+
+                        // Función para actualizar el gráfico según el modo de vista
+                        function updateChart() {
+                            let labels, data;
+                            if (viewMode === 'day') {
+                                labels = Object.keys(totalsByDate);
+                                data = Object.values(totalsByDate);
+                                chart.config.data.datasets[0].label = 'Total de personas por día';
+                            } else {
+                                labels = Object.keys(totalsByHour);
+                                data = Object.values(totalsByHour);
+                                chart.config.data.datasets[0].label = 'Total de personas por hora';
+                            }
+
+                            chart.config.data.labels = labels;
+                            chart.config.data.datasets[0].data = data;
+                            chart.update();
+                        }
+
+                        // Crear el gráfico inicial con Chart.js
+                        const ctx = document.getElementById('dailyTotalChart');
+                        const chart = new Chart(ctx, {
+                            type: 'bar',  // Puede ser 'line' para un gráfico de línea
+                            data: {
+                                labels: Object.keys(totalsByDate),
+                                datasets: [{
+                                    label: 'Total de personas por día',
+                                    data: Object.values(totalsByDate),
+                                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                                    borderColor: 'rgba(75, 192, 192, 1)',
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    x: {
+                                        title: {
+                                            display: true,
+                                            text: 'Fecha'
+                                        }
+                                    },
+                                    y: {
+                                        title: {
+                                            display: true,
+                                            text: 'Cantidad de personas'
+                                        },
+                                        beginAtZero: true
+                                    }
+                                }
+                            }
+                        });
+
+                        // Agregar el evento al botón de cambiar vista
+                        document.getElementById('toggleview').addEventListener('change', (event) => {
+
+                            viewMode = viewMode === 'day' ? 'hour' : 'day';
+                            console.log('Cambiando a vista:', viewMode);
+                            updateChart();
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock %}

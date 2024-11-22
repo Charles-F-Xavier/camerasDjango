@@ -1,0 +1,31 @@
+{% load static %}
+<div class="camera-display">
+    {% for config in camera_configs %}
+        <div class="camera card text-bg-dark ">
+            <img id="camera-feed-" src="{% static 'resources/icon.png' %}"
+                 class="card-img camera-image" alt="Camera {{ config.name }}">
+            <div class="card-img-overlay">
+                <h5 class="card-title">Camera {{ config.name }}</h5>
+                <p class="card-text">{{ config.port }}</p>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+<style>
+    .camera {
+        float: left;
+        width: calc(100% / {{ cols }} - 2px);
+        height: calc(100% / {{ rows }} - 2px);
+        border: 1px solid #353535;
+        position: relative;
+    }
+
+    @media screen and (max-width: 992px) {
+        .camera {
+            width: 100%;
+            height: 100%;
+            border: 1px solid #353535;
+            position: relative;
+        }
+    }
+</style>
