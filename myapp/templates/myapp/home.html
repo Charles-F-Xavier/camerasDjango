@@ -23,18 +23,22 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
-                    <div id="camera-display-container">
-                        <div class="camera-display">
+                    <div id="camera-display-container" style="height: 65vh;">
+                        <iframe src="http://194.113.195.140:8088/808gps/open/player/video.html?lang=en&devIdno=562408000003&jsession=b7d45dd90fc24e11a8e33a1695355ea8" style="width: 100%; height: 100%">
+
+                        </iframe>
+                        {% comment %}<div class="camera-display">
                             {% for config in camera_configs %}
                                 <div class="card text-bg-dark camera">
-                                    <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}" class="card-img camera-image" alt="Camera {{ config.name }}">
+                                    <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
+                                         class="card-img camera-image" alt="Camera {{ config.name }}">
                                     <div class="card-img-overlay">
                                         <h5 class="card-title">Camera {{ config.name }}</h5>
                                         <p class="card-text">{{ config.port }}</p>
                                     </div>
                                 </div>
                             {% endfor %}
-                        </div>
+                        </div>{% endcomment %}
                         <style>
                             .camera {
                                 float: left;
