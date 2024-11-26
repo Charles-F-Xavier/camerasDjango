@@ -63,15 +63,15 @@ ROOT_URLCONF = 'camerasDjango.urls'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
-    "http://localhost:8001",
-    "http://localhost:8002",
-    "http://localhost:8003",
-    "http://localhost:8004",
-    "http://localhost:8005",
-    "http://localhost:8006",
-    "http://localhost:8007",
-    "http://localhost:8008",
+    "http://127.0.0.1:8000",
+    "http://0.0.0.0:8000",
+    "http://192.168.1.3:8000",
 ]
+
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_METHODS = ["*"]
+CORS_ALLOW_HEADERS = ["*"]
+
 
 TEMPLATES = [
     {
@@ -145,6 +145,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "myapp/static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
