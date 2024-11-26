@@ -9,7 +9,7 @@
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
                                 aria-expanded="false">
                             N Cameras
-                        </button>
+                        </button><p id="n_cameras">0</p>
                         <ul class="dropdown-menu dropdown-menu-dark">
                             {% for i in camera_count_range %}
                                 <li>
@@ -27,17 +27,20 @@
                         {% comment %}<iframe src="http://194.113.195.140:8088/808gps/open/player/video.html?lang=en&devIdno=562408000003&jsession=b7d45dd90fc24e11a8e33a1695355ea8" style="width: 100%; height: 100%">
 
                         </iframe>{% endcomment %}
-                        <div class="camera-display">
+                        <div class="camera-display" >
                             {% for config in camera_configs %}
-                                <div class="card text-bg-dark camera">
-                                    <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
-                                         class="card-img camera-image" alt="Camera {{ config.name }}">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title" id="camera-title-{{ config.port }}">Camera {{ config.name }}</h5>
-                                        <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
-                                        <p class="card-text" id="people-count-{{ config.port }}">{{ config.port }}</p>
+                                    <div class="card text-bg-dark camera">
+                                        <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
+                                             class="card-img camera-image" alt="Camera {{ config.name }}">
+                                        <div class="card-img-overlay">
+                                            <h5 class="card-title" id="camera-title-{{ config.port }}">
+                                                Camera {{ config.name }}</h5>
+                                            <p class="card-text"
+                                               id="camera-port-{{ config.port }}">{{ config.port }}</p>
+                                            <p class="card-text"
+                                               id="people-count-{{ config.port }}">{{ config.port }}</p>
+                                        </div>
                                     </div>
-                                </div>
                             {% endfor %}
                         </div>
                         <style>
@@ -93,7 +96,7 @@
             function updateCameraCount(event, cameraCount) {
                 // Evita que el enlace ancla recargue la página
                 event.preventDefault();
-
+                $('#n_cameras').text(cameraCount);
                 // Llama a la URL con el parámetro de `camera_count`
                 fetch(`/?camera_count=${cameraCount}`, {
                     method: 'GET',
@@ -160,11 +163,11 @@
                         console.log("Razón:", event.reason);
                         console.log("Cierre limpio:", event.wasClean);
 
-                        if (!event.wasClean) {
+                        {% comment %}if (!event.wasClean) {
                             console.warn("El cierre no fue limpio. Intentando reconectar...");
                             // Reconectar
                             setTimeout(() => reconnectWebSocket(), 5000);
-                        }
+                        }{% endcomment %}
                     };
 
                     ws.onerror = (error) => {

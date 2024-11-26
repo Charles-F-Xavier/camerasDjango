@@ -1,14 +1,16 @@
 {% load static %}
 <div class="camera-display">
     {% for config in camera_configs %}
-        <div class="camera card text-bg-dark ">
-            <img id="camera-feed-" src="{% static 'resources/icon.png' %}"
-                 class="card-img camera-image" alt="Camera {{ config.name }}">
-            <div class="card-img-overlay">
-                <h5 class="card-title">Camera {{ config.name }}</h5>
-                <p class="card-text">{{ config.port }}</p>
+            <div class="card text-bg-dark camera">
+                <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
+                     class="card-img camera-image" alt="Camera {{ config.name }}">
+                <div class="card-img-overlay">
+                    <h5 class="card-title" id="camera-title-{{ config.port }}">
+                        Camera {{ config.name }}</h5>
+                    <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
+                    <p class="card-text" id="people-count-{{ config.port }}">{{ config.port }}</p>
+                </div>
             </div>
-        </div>
     {% endfor %}
 </div>
 <style>

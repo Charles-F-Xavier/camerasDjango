@@ -25,6 +25,7 @@ def home(request):
     ]
 
     camera_count = int(request.GET.get('camera_count', 9))
+    camera_configs= camera_configs[:camera_count]
     if camera_count == 1:
         cols = 1
         rows = 1
