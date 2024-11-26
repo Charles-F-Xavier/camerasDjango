@@ -24,21 +24,22 @@
             <div class="row justify-content-center">
                 <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
                     <div id="camera-display-container" style="height: 65vh;">
-                        <iframe src="http://194.113.195.140:8088/808gps/open/player/video.html?lang=en&devIdno=562408000003&jsession=b7d45dd90fc24e11a8e33a1695355ea8" style="width: 100%; height: 100%">
+                        {% comment %}<iframe src="http://194.113.195.140:8088/808gps/open/player/video.html?lang=en&devIdno=562408000003&jsession=b7d45dd90fc24e11a8e33a1695355ea8" style="width: 100%; height: 100%">
 
-                        </iframe>
-                        {% comment %}<div class="camera-display">
+                        </iframe>{% endcomment %}
+                        <div class="camera-display">
                             {% for config in camera_configs %}
                                 <div class="card text-bg-dark camera">
                                     <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
                                          class="card-img camera-image" alt="Camera {{ config.name }}">
                                     <div class="card-img-overlay">
-                                        <h5 class="card-title">Camera {{ config.name }}</h5>
-                                        <p class="card-text">{{ config.port }}</p>
+                                        <h5 class="card-title" id="camera-title-{{ config.port }}">Camera {{ config.name }}</h5>
+                                        <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
+                                        <p class="card-text" id="people-count-{{ config.port }}">{{ config.port }}</p>
                                     </div>
                                 </div>
                             {% endfor %}
-                        </div>{% endcomment %}
+                        </div>
                         <style>
                             .camera {
                                 float: left;
@@ -134,27 +135,45 @@
             $(document).ready(function () {
                 // Código de inicialización de la página
                 console.log('Página cargada');
-                const imageRef = document.getElementById('camera-feed-8002'); // Reemplaza con el ID de tu elemento de imagen
-                const personCountRef = document.getElementById('person-count'); // Reemplaza con el ID de tu elemento de conteo
 
-                const ws = new WebSocket('ws://localhost:8002/ws');
+                const camera_config = {{ camera_configs|safe }};
 
-                ws.onopen = () => {
-                    console.log('Conexión WebSocket abierta');
-                };
 
-                ws.onmessage = (event) => {
-                    console.log('Mensaje recibido del servidor:', event.data);
-                    // Puedes procesar la data recibida, como actualizar un elemento <video> o <img>
-                };
+                camera_config.forEach((camera) => {
+                    const imageRef = document.getElementById(`camera-feed-${camera.port}`); // Reemplaza con el ID de tu elemento de imagen
+                    const personCountRef = document.getElementById(`person-count-${camera.port}`); // Reemplaza con el ID de tu elemento de conteo
 
-                ws.onclose = () => {
-                    console.log('Conexión WebSocket cerrada');
-                };
+                    const ws = new WebSocket(`ws://192.168.1.3:${camera.port}/ws`);
 
-                ws.onerror = (error) => {
-                    console.error('Error en la conexión WebSocket:', error.type);
-                };
+                    ws.onopen = () => {
+                        console.log('Conexión WebSocket abierta');
+                    };
+
+                    ws.onmessage = (event) => {
+                        console.log('Mensaje recibido del servidor:', event.data);
+                        // Puedes procesar la data recibida, como actualizar un elemento <video> o <img>
+                    };
+
+                    ws.onclose = (event) => {
+                        console.log("WebSocket cerrado.");
+                        console.log("Código:", event.code);
+                        console.log("Razón:", event.reason);
+                        console.log("Cierre limpio:", event.wasClean);
+
+                        if (!event.wasClean) {
+                            console.warn("El cierre no fue limpio. Intentando reconectar...");
+                            // Reconectar
+                            setTimeout(() => reconnectWebSocket(), 5000);
+                        }
+                    };
+
+                    ws.onerror = (error) => {
+                        console.error('Error en la conexión WebSocket:', error.type);
+                    };
+
+                });
+
+
             });
         </script>
 
