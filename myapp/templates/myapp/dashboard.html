@@ -13,12 +13,19 @@
                     </div>
                 </div>
             </div>
+            <style>
+                #chart-container {
+                    height: 65vh;
+                    width: 100%;
+                }
+            </style>
             <div class="row justify-content-center">
                 <div class="col-sm-11 col-md-8 col-lg-8">
-                    <canvas id="dailyTotalChart" width="400" height="200"></canvas>
+                    {% comment %}<canvas id="dailyTotalChart" width="400" height="200"></canvas>{% endcomment %}
+
                     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
                     <script>
-                        // Obtener los datos desde Django
+                        {% comment %}// Obtener los datos desde Django
                         const dataFromDjango = {{ data_seria|safe }};
 
                         // Variables para almacenar los totales
@@ -103,6 +110,116 @@
                         // Agregar el evento al botón de cambiar vista
                         document.getElementById('toggleview').addEventListener('change', (event) => {
 
+                            viewMode = viewMode === 'day' ? 'hour' : 'day';
+                            console.log('Cambiando a vista:', viewMode);
+                            updateChart();
+                        });{% endcomment %}
+                    </script>
+
+
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-sm-11 col-md-8 col-lg-8">
+                    <div id="chart-container"></div>
+                    <script src="https://fastly.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+                    <script>
+                        // Obtener los datos desde Django
+                        const dataFromDjango = {{ data_seria|safe }};
+
+                        // Variables para almacenar los totales
+                        let totalsByDate = {};
+                        let totalsByHour = {};
+
+                        // Procesar los datos para obtener la suma de `quantity` por día y por hora
+                        dataFromDjango.forEach(item => {
+                            let date = new Date(item.fields.date);
+                            let dateString = date.toISOString().split('T')[0]; // Formato 'YYYY-MM-DD'
+                            let hourString = `${dateString} ${date.getUTCHours()}:00`; // Formato 'YYYY-MM-DD HH:00'
+
+                            // Sumar por día
+                            if (totalsByDate[dateString]) {
+                                totalsByDate[dateString] += item.fields.quantity;
+                            } else {
+                                totalsByDate[dateString] = item.fields.quantity;
+                            }
+
+                            // Sumar por hora
+                            if (totalsByHour[hourString]) {
+                                totalsByHour[hourString] += item.fields.quantity;
+                            } else {
+                                totalsByHour[hourString] = item.fields.quantity;
+                            }
+                        });
+
+                        // Inicializar la vista como 'día'
+                        let viewMode = 'day';
+
+                        // Inicializar el gráfico de ECharts
+                        var dom = document.getElementById('chart-container');
+
+                        var chart = echarts.init(dom, {
+                            renderer: 'canvas',
+                            useDirtyRect: false
+                        });
+
+                        // Configuración base del gráfico
+                        const baseOption = {
+                            tooltip: {
+                                trigger: 'axis',
+                                axisPointer: {
+                                    type: 'shadow' // Línea o sombreado
+                                }
+                            },
+                            xAxis: {
+                                type: 'category',
+                                axisLabel: {
+                                    rotate: 45 // Rotar etiquetas del eje X si son largas
+                                }
+                            },
+                            yAxis: {
+                                type: 'value',
+                                name: 'Cantidad de personas',
+                                nameLocation: 'middle',
+                                nameGap: 40,
+                                minInterval: 1 // Evitar decimales en el eje Y
+                            },
+                            series: [
+                                {
+                                    type: 'bar',
+                                    data: [],
+                                    itemStyle: {
+                                        color: 'rgba(75, 192, 192, 0.8)' // Color de las barras
+                                    }
+                                }
+                            ]
+                        };
+
+                        // Función para actualizar el gráfico según el modo de vista
+                        function updateChart() {
+                            const labels = viewMode === 'day' ? Object.keys(totalsByDate) : Object.keys(totalsByHour);
+                            const data = viewMode === 'day' ? Object.values(totalsByDate) : Object.values(totalsByHour);
+
+                            chart.setOption({
+                                xAxis: {
+                                    data: labels,
+                                    name: viewMode === 'day' ? 'Fecha' : 'Hora'
+                                },
+                                series: [
+                                    {
+                                        data: data,
+                                        name: viewMode === 'day' ? 'Total de personas por día' : 'Total de personas por hora'
+                                    }
+                                ]
+                            });
+                        }
+
+                        // Configurar el gráfico inicialmente (vista por día)
+                        chart.setOption(baseOption);
+                        updateChart();
+
+                        // Agregar el evento al botón de cambiar vista
+                        document.getElementById('toggleview').addEventListener('change', () => {
                             viewMode = viewMode === 'day' ? 'hour' : 'day';
                             console.log('Cambiando a vista:', viewMode);
                             updateChart();

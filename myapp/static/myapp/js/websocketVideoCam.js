@@ -96,9 +96,9 @@ class WebSocketVideoHandler {
                 if (data.frame) {
                     this.videoElement.src = `data:image/jpeg;base64,${data.frame}`;
                     
-                    const counterElement = document.getElementById(`counter-${this.cameraPort}`);
+                    const counterElement = document.getElementById(`people-count-${this.cameraPort}`);
                     if (counterElement && data.count !== undefined) {
-                        counterElement.textContent = `People count: ${data.count}`;
+                        counterElement.textContent = `${data.count}`;
                     }
                 }
             } catch (error) {
