@@ -24,15 +24,66 @@
             <div class="row justify-content-center">
                 <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
                     <div id="camera-display-container" style="height: 65vh;">
+                        <style>
+                            .camera-controls {
+                                position: absolute;
+                                top: 10px;
+                                right: 10px;
+                                display: flex;
+                                gap: 5px;
+                            }
+
+                            .maximize-btn, .minimize-btn {
+                                background-color: rgba(0, 0, 0, 0.5);
+                                color: white;
+                                border: none;
+                                padding: 5px 10px;
+                                cursor: pointer;
+                                border-radius: 4px;
+                                font-size: 14px;
+                            }
+
+                            .maximize-btn:hover, .minimize-btn:hover {
+                                background-color: rgba(0, 0, 0, 0.8);
+                            }
+
+                        </style>
+                        <!-- Modal de Bootstrap -->
+                        <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="cameraModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="cameraModalLabel">Cámara</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img id="modalCameraImage" src="{% static 'resources/icon.png' %}" alt="Camera Feed" class="img-fluid">
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="camera-display">
                             {% for config in camera_configs %}
                                 <div class="card text-bg-dark camera">
                                     <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
-                                         class="card-img camera-image" alt="Camera {{ config.name }}">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title" id="camera-title-{{ config.port }}">Camera {{ config.name }}</h5>
+                                         class="card-img camera-image" alt="Camera {{ config.name }}"
+                                    >
+                                    <div class="card-img-overlay" ondblclick="showInModal('{{ config.port }}')">
+                                        <h5 class="card-title" id="camera-title-{{ config.port }}">
+                                            Camera {{ config.name }}</h5>
                                         <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
                                         <div class="card-text" id="people-count-{{ config.port }}">0</div>
+
+                                        <div class="camera-controls">
+                                            <button class="maximize-btn" onclick="enterFullscreen('camera-feed-{{ config.port }}')">⛶</button>
+                                            <button class="minimize-btn" onclick="exitFullscreen()">⤢</button>
+                                        </div>
                                     </div>
                                 </div>
                             {% endfor %}
@@ -55,6 +106,12 @@
                                     border: 1px solid #ccc;
                                     position: relative;
                                 }
+
+                            }
+
+                            .modal-body img {
+                                max-height: 80vh; /* Limita la altura máxima para evitar que ocupe más de la pantalla */
+                                object-fit: contain; /* Asegura que la imagen mantenga su proporción */
                             }
                         </style>
                     </div>
@@ -85,9 +142,87 @@
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+                integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
+            // Objeto para guardar las conexiones WebSocket activas
+            const activeWebSockets = {};
+
+            function showInModal(port) {
+                // Obtener el modal y sus elementos
+                const modalImage = document.getElementById('modalCameraImage');
+                const modalTitle = document.getElementById('cameraModalLabel');
+                const cameraModal = new bootstrap.Modal(document.getElementById('cameraModal'));
+
+                // Actualizar el título del modal
+                modalTitle.textContent = `Cámara ${port}`;
+
+                // Crear un nuevo WebSocket si no existe
+                if (!activeWebSockets[port]) {
+                    const ws = new WebSocket(`ws://127.0.0.1:${port}/ws`);
+                    activeWebSockets[port] = ws;
+
+                    // Configurar el WebSocket para recibir frames
+                    ws.onmessage = (event) => {
+                        const data = JSON.parse(event.data);
+                        if (data.frame) {
+                            // Actualizar la imagen del modal con el frame recibido
+                            modalImage.src = `data:image/jpeg;base64,${data.frame}`;
+
+                        }
+                    };
+
+                    ws.onerror = (error) => {
+                        console.error(`Error en WebSocket para puerto ${port}:`, error);
+                    };
+
+                    ws.onclose = () => {
+                        console.log(`WebSocket cerrado para puerto ${port}`);
+                        delete activeWebSockets[port]; // Eliminar la referencia
+                    };
+                }
+
+                // Mostrar el modal
+                cameraModal.show();
+
+                // Al cerrar el modal, cerrar el WebSocket si no es necesario mantenerlo
+                document.getElementById('cameraModal').addEventListener('hidden.bs.modal', () => {
+                    if (activeWebSockets[port]) {
+                        activeWebSockets[port].close();
+                        delete activeWebSockets[port];
+                    }
+                });
+            }
+
+
+            function enterFullscreen(elementId) {
+                const element = document.getElementById(elementId);
+                if (element.requestFullscreen) {
+                    element.requestFullscreen();
+                } else if (element.mozRequestFullScreen) { // Firefox
+                    element.mozRequestFullScreen();
+                } else if (element.webkitRequestFullscreen) { // Chrome, Safari, Opera
+                    element.webkitRequestFullscreen();
+                } else if (element.msRequestFullscreen) { // IE/Edge
+                    element.msRequestFullscreen();
+                }
+            }
+
+            function exitFullscreen() {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.mozCancelFullScreen) { // Firefox
+                    document.mozCancelFullScreen();
+                } else if (document.webkitExitFullscreen) { // Chrome, Safari, Opera
+                    document.webkitExitFullscreen();
+                } else if (document.msExitFullscreen) { // IE/Edge
+                    document.msExitFullscreen();
+                }
+            }
+
+
+
             function updateCameraCount(event, cameraCount) {
                 // Evita que el enlace ancla recargue la página
                 event.preventDefault();
@@ -131,6 +266,9 @@
             }
 
             $(document).ready(function () {
+
+
+
                 // Código de inicialización de la página
                 console.log('Página cargada');
 
