@@ -8,6 +8,12 @@ import math
 from .models import Count
 
 
+def index(request):
+    return render(request, 'myapp/index.html')
+
+def login(request):
+    return render(request,'myapp/login.html')
+
 # Create your views here.
 # Vista para la página de inicio
 def home(request):
