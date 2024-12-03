@@ -1,23 +1,83 @@
 {% load static %}
-<div class="camera-display">
-    {% for config in camera_configs %}
-            <div class="card text-bg-dark camera">
-                <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
-                     class="card-img camera-image" alt="Camera {{ config.name }}">
-                <div class="card-img-overlay">
-                    <h5 class="card-title" id="camera-title-{{ config.port }}">
-                        Camera {{ config.name }}</h5>
-                    <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
-                    <p class="card-text" id="people-count-{{ config.port }}">{{ config.port }}</p>
+<style>
+    .camera-controls {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        gap: 5px;
+    }
+
+    .maximize-btn, .minimize-btn {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 14px;
+    }
+
+    .maximize-btn:hover, .minimize-btn:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+</style>
+<!-- Modal de Bootstrap -->
+<div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="cameraModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="cameraModalLabel">Cámara</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0">
+                <!-- Card con overlay -->
+                <div class="card text-bg-dark">
+                    <!-- Imagen del feed -->
+                    <img id="modalCameraImage" alt="Camera Feed" class="card-img img-fluid">
+
+                    <!-- Overlay -->
+                    <div class="card-img-overlay d-flex flex-column justify-content-end">
+                        <p class="card-text">Personas detectadas:</p>
+                        <h4 class="card-title fw-bold" id="peopleCountValue">0</h4>
+                    </div>
                 </div>
             </div>
-    {% endfor %}
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
+{% for config in camera_configs %}
+    <div class="card text-bg-dark camera">
+        <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
+             class="card-img camera-image" alt="Camera {{ config.name }}"
+        >
+        <div class="card-img-overlay" ondblclick="showInModal('{{ config.port }}')">
+            <h5 class="card-title" id="camera-title-{{ config.port }}">
+                Camera {{ config.name }}</h5>
+            <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
+            <div class="card-text" id="people-count-{{ config.port }}">0</div>
+            <!-- Estado de la cámara (online/offline) -->
+            <span id="camera-status-{{ config.port }}" class="camera-status">
+                                            <span class="status-dot" id="status-dot-{{ config.port }}"></span>
+                                            <span id="status-text-{{ config.port }}">Offline</span>
+                                        </span>
+        </div>
+    </div>
+{% endfor %}
 <style>
     .camera {
         float: left;
+        /* @formatter:off */
         width: calc(100% / {{ cols }} - 2px);
         height: calc(100% / {{ rows }} - 2px);
+        /* @formatter:on */
         border: 1px solid #353535;
         position: relative;
     }

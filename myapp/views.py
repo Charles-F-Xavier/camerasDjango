@@ -11,8 +11,10 @@ from .models import Count
 def index(request):
     return render(request, 'myapp/index.html')
 
+
 def login(request):
-    return render(request,'myapp/login.html')
+    return render(request, 'myapp/login.html')
+
 
 # Create your views here.
 # Vista para la página de inicio
@@ -123,16 +125,6 @@ def monitoreo(request):
         rows = math.ceil(camera_count / cols)
 
     camera_count_range = range(1, camera_count + 1)
-
-    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-        # Si la solicitud es AJAX, devuelve solo el HTML para las cámaras
-        return render(request, 'myapp/camera_display.html', {
-            'camera_count_range': camera_count_range,
-            'cols': cols,
-            'rows': rows,
-            'camera_configs': camera_configs,
-            'devices': devices
-        })
 
     return render(request, 'myapp/monitoreo.html', {
         'camera_count_range': camera_count_range,

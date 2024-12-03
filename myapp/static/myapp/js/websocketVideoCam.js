@@ -8,7 +8,7 @@ class WebSocketVideoHandler {
         this.maxReconnectAttempts = 5;
         this.reconnectDelay = 2000;
         this.connectionUrl = `ws://127.0.0.1:${this.cameraPort}/ws`;
-        
+
         if (!this.videoElement) {
             console.error(`Video element with id ${videoElementId} not found`);
             return;
@@ -46,7 +46,7 @@ class WebSocketVideoHandler {
 
         try {
             console.log(`Intentando conectar a ${this.connectionUrl}`);
-            
+
             if (this.ws) {
                 this.ws.close();
                 this.ws = null;
@@ -54,7 +54,7 @@ class WebSocketVideoHandler {
 
             this.ws = new WebSocket(this.connectionUrl);
             this.setupWebSocketHandlers();
-            
+
             await new Promise((resolve, reject) => {
                 const timeout = setTimeout(() => {
                     reject(new Error('Timeout connecting to WebSocket'));
@@ -85,9 +85,19 @@ class WebSocketVideoHandler {
             this.isConnected = true;
             this.reconnectAttempts = 0;
             this.videoElement.classList.add('connected');
-            
+
+            // Actualiza el estado de la cámara a "Online"
+            const statusDotElement = document.getElementById(`status-dot-${this.cameraPort}`);
+            const statusElement = document.getElementById(`status-text-${this.cameraPort}`);
+
+            if (statusDotElement && statusElement) {
+                statusDotElement.style.backgroundColor = 'green'; // Punto verde cuando está online
+                statusElement.textContent = 'Conectado';  // Texto de estado
+            }
+
+
             // Enviar mensaje inicial
-            this.sendMessage({ type: 'init' });
+            this.sendMessage({type: 'init'});
         };
 
         this.ws.onmessage = (event) => {
@@ -95,8 +105,10 @@ class WebSocketVideoHandler {
                 const data = JSON.parse(event.data);
                 if (data.frame) {
                     this.videoElement.src = `data:image/jpeg;base64,${data.frame}`;
-                    
+
                     const counterElement = document.getElementById(`people-count-${this.cameraPort}`);
+
+
                     if (counterElement && data.count !== undefined) {
                         counterElement.textContent = `${data.count}`;
                     }
@@ -110,7 +122,17 @@ class WebSocketVideoHandler {
             console.log(`WebSocket closed. Code: ${event.code}, Reason: ${event.reason}`);
             this.isConnected = false;
             this.videoElement.classList.remove('connected');
-            
+
+            // Actualiza el estado de la cámara a "Offline" cuando se cierra la conexión
+            const statusDotElement = document.getElementById(`status-dot-${this.cameraPort}`);
+            const statusElement = document.getElementById(`status-text-${this.cameraPort}`);
+
+            if (statusDotElement && statusElement) {
+                statusDotElement.style.backgroundColor = 'red'; // Punto rojo cuando está offline
+                statusElement.textContent = 'Desconectado';  // Texto de estado
+            }
+
+
             if (this.connectionState.shouldReconnect) {
                 this.handleReconnection();
             }
@@ -124,6 +146,7 @@ class WebSocketVideoHandler {
         };
     }
 
+
     handleReconnection() {
         if (this.reconnectAttempts >= this.maxReconnectAttempts) {
             console.log('Max reconnection attempts reached');
@@ -133,7 +156,7 @@ class WebSocketVideoHandler {
 
         this.reconnectAttempts++;
         console.log(`Attempting to reconnect (${this.reconnectAttempts}/${this.maxReconnectAttempts})`);
-        
+
         const delay = this.reconnectDelay * Math.pow(1.5, this.reconnectAttempts - 1);
         setTimeout(() => this.connect(), delay);
     }
@@ -156,12 +179,13 @@ class WebSocketVideoHandler {
 function initializeVideoFeeds() {
     console.log('Initializing video feeds...');
     const cameras = document.querySelectorAll('.camera');
-    
+
     cameras.forEach(camera => {
         // Buscar el puerto en el texto del overlay
         const portElement = camera.querySelector('.card-img-overlay');
         const videoElement = camera.querySelector('.camera-image');
-        
+
+
         if (portElement && videoElement) {
             const portText = portElement.textContent.trim();
             console.log(`Initializing camera with port text: "${portText}" and video element ID ${videoElement.id}`);
