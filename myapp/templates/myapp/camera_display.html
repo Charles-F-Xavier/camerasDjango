@@ -56,18 +56,20 @@
 {% for config in camera_configs %}
     <div class="card text-bg-dark camera">
         <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
-             class="card-img camera-image" alt="Camera {{ config.name }}"
-        >
+             class="card-img camera-image" alt="Camera {{ config.name }}">
         <div class="card-img-overlay" ondblclick="showInModal('{{ config.port }}')">
             <h5 class="card-title" id="camera-title-{{ config.port }}">
-                Camera {{ config.name }}</h5>
+                {{ config.name }}
+                <span class="card-text" id="people-count-{{ config.port }}">0</span>
+            </h5>
+            {% comment %}
             <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
-            <div class="card-text" id="people-count-{{ config.port }}">0</div>
-            <!-- Estado de la cámara (online/offline) -->
+            {% endcomment %}
+
             <span id="camera-status-{{ config.port }}" class="camera-status">
-                                            <span class="status-dot" id="status-dot-{{ config.port }}"></span>
-                                            <span id="status-text-{{ config.port }}">Offline</span>
-                                        </span>
+                <span class="status-dot" id="status-dot-{{ config.port }}"></span>
+                <span id="status-text-{{ config.port }}">Desconectado</span>
+            </span>
         </div>
     </div>
 {% endfor %}

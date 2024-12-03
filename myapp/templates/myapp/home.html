@@ -23,6 +23,24 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
+                    <div class="btn-group mb-3" role="group" aria-label="Layout buttons">
+                        <button id="layout-fullscreen" class="btn btn-outline-primary">
+                            <i class="bi bi-square"></i> <!-- Ícono para pantalla completa -->
+                        </button>
+                        <button id="layout-grid-4" class="btn btn-outline-secondary">
+                            <i class="bi bi-grid-fill"></i> <!-- Ícono para 4 cámaras -->
+                        </button>
+                        <button id="layout-grid-9" class="btn btn-outline-secondary">
+                            <i class="bi bi-grid-3x3-gap-fill"></i> <!-- Ícono para 9 cámaras -->
+                        </button>
+                        <button id="layout-highlight" class="btn btn-outline-secondary">
+                            <i class="bi bi-layout-text-sidebar-reverse"></i>
+                            <!-- Ícono para 1 cámara grande y 5 pequeñas -->
+                        </button>
+                        <button id="adjust-aspect-ratio" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrows-fullscreen"></i> <!-- Ícono para ajustar aspecto -->
+                        </button>
+                    </div>
                     <div id="camera-display-container" style="height: 65vh;">
                         <style>
                             .camera-status {
@@ -95,8 +113,9 @@
                                             <span class="card-text" id="people-count-{{ config.port }}">0</span>
                                         </h5>
 
+                                        {% comment %}
                                         <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
-
+                                        {% endcomment %}
                                         <!-- Estado de la cámara (online/offline) -->
                                         <span id="camera-status-{{ config.port }}" class="camera-status">
                                             <span class="status-dot" id="status-dot-{{ config.port }}"></span>
