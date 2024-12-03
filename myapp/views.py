@@ -1,3 +1,4 @@
+from django.contrib.sites import requests
 from django.core import serializers
 from django.db import connection, OperationalError
 from django.shortcuts import render
@@ -19,7 +20,10 @@ def login(request):
 # Create your views here.
 # Vista para la página de inicio
 def home(request):
+    # captura de los dispotivos en la base de datos
     devices = Count.objects.values('device_id').distinct()
+
+    # configuracion default de las camaras
     camera_configs = [
         {'port': 8001, 'name': 'CH1'},
         {'port': 8002, 'name': 'CH2'},
@@ -32,6 +36,7 @@ def home(request):
         {'port': 8009, 'name': 'CH9'},
     ]
 
+    # n de camaras desde el request, si no 9
     camera_count = int(request.GET.get('camera_count', 9))
     camera_configs = camera_configs[:camera_count]
     if camera_count == 1:
@@ -55,6 +60,7 @@ def home(request):
         rows = math.ceil(camera_count / cols)
 
     camera_count_range = range(1, camera_count + 1)
+
     if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
         # Si la solicitud es AJAX, devuelve solo el HTML para las cámaras
         return render(request, 'myapp/camera_display.html', {
@@ -71,7 +77,7 @@ def home(request):
         'cols': cols,
         'rows': rows,
         'camera_configs': camera_configs,
-        'devices': devices
+        'devices': devices,
     })
 
 
