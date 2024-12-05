@@ -113,9 +113,8 @@
                                             <span class="card-text" id="people-count-{{ config.port }}">0</span>
                                         </h5>
 
-                                        {% comment %}
                                         <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
-                                        {% endcomment %}
+
                                         <!-- Estado de la cámara (online/offline) -->
                                         <span id="camera-status-{{ config.port }}" class="camera-status">
                                             <span class="status-dot" id="status-dot-{{ config.port }}"></span>
@@ -161,10 +160,11 @@
                             <h3>Camaras</h3>
                         </div>
                     </div>
+                    <div id="tree-js"></div>
                     <div class="row justify-content-between">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
+                        <div class="col-sm-12 col-md-12 col-lg-12" id="jstree">
                             <ul class="list-group">
-                                {% for device in devices %}
+                                {% for vehicle in vehicles %}
                                     <li class="list-group-item">
                                         <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
                                                id="firstRadio" checked>
@@ -235,7 +235,6 @@
                 });
             }
 
-
             function updateCameraCount(event, cameraCount) {
                 // Evita que el enlace ancla recargue la página
                 event.preventDefault();
@@ -294,11 +293,19 @@
 
             $(document).ready(function () {
 
-
-                // Código de inicialización de la página
-                console.log('Página cargada');
-
-
+                console.log("Ready");
+                console.log({{ tree|safe }});
+                console.log(typeof {{ tree|safe }});
+                let data_tree = JSON.stringify({{ tree|safe }});
+                $(function () {
+                    $('#tree-js').jstree({
+                        'core': {
+                            'data': {{ tree|safe }},
+                        },
+                        "checkbox": {},
+                        "plugins": ["wholerow", "checkbox"]
+                    });
+                });
             });
         </script>
 

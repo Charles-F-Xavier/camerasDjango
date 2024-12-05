@@ -90,10 +90,8 @@ class WebSocketVideoHandler {
             const statusDotElement = document.getElementById(`status-dot-${this.cameraPort}`);
             const statusElement = document.getElementById(`status-text-${this.cameraPort}`);
 
-            if (statusDotElement && statusElement) {
-                statusDotElement.style.backgroundColor = 'green'; // Punto verde cuando está online
-                statusElement.textContent = 'Conectado';  // Texto de estado
-            }
+            statusDotElement.style.backgroundColor = 'green'; // Punto verde cuando está online
+            statusElement.textContent = 'Conectado';  // Texto de estado
 
 
             // Enviar mensaje inicial
@@ -107,7 +105,12 @@ class WebSocketVideoHandler {
                     this.videoElement.src = `data:image/jpeg;base64,${data.frame}`;
 
                     const counterElement = document.getElementById(`people-count-${this.cameraPort}`);
+// Actualiza el estado de la cámara a "Online"
+                    const statusDotElement = document.getElementById(`status-dot-${this.cameraPort}`);
+                    const statusElement = document.getElementById(`status-text-${this.cameraPort}`);
 
+                    statusDotElement.style.backgroundColor = 'green'; // Punto verde cuando está online
+                    statusElement.textContent = 'Conectado';  // Texto de estado
 
                     if (counterElement && data.count !== undefined) {
                         counterElement.textContent = `${data.count}`;
