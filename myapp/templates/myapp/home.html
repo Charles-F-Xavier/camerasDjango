@@ -75,10 +75,11 @@
                         <!-- Modal de Bootstrap -->
                         <div class="modal fade" id="cameraModal" tabindex="-1" aria-labelledby="cameraModalLabel"
                              aria-hidden="true">
-                            <div class="modal-dialog modal-lg modal-dialog-centered">
+                            <div class="modal-dialog modal-fullscreen modal-dialog-centered">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="cameraModalLabel">Cámara</h5>
+
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                 aria-label="Close"></button>
                                     </div>
@@ -86,16 +87,22 @@
                                         <!-- Card con overlay -->
                                         <div class="card text-bg-dark">
                                             <!-- Imagen del feed -->
-                                            <img id="modalCameraImage" alt="Camera Feed" class="card-img img-fluid">
+                                            <img id="modalCameraImage" src="{% static 'resources/icon.png' %}"
+                                                 alt="Camera Feed" class="card-img camera-image">
 
                                             <!-- Overlay -->
                                             <div class="card-img-overlay d-flex flex-column justify-content-end">
-                                                <p class="card-text">Personas detectadas:</p>
-                                                <h4 class="card-title fw-bold" id="peopleCountValue">0</h4>
+                                                <span class="card-text"><i class="bi bi-people-fill"><h4
+                                                        class="card-title fw-bold"
+                                                        id="peopleCountValue">0</h4></i></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
+                                        <span id="camera-status" class="camera-status">
+                                            <span class="status-dot" id="status-dot"></span>
+                                            <span id="status-text" class="text-dark fw-bold">Desconectado</span>
+                                        </span>
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar
                                         </button>
                                     </div>
@@ -108,12 +115,19 @@
                                     <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
                                          class="card-img camera-image" alt="Camera {{ config.name }}">
                                     <div class="card-img-overlay" ondblclick="showInModal('{{ config.port }}')">
-                                        <h5 class="card-title" id="camera-title-{{ config.port }}">
+                                        <h5 class="card-title d-flex justify-content-between"
+                                            id="camera-title-{{ config.port }}">
                                             {{ config.name }}
-                                            <span class="card-text" id="people-count-{{ config.port }}">0</span>
+                                            <i class="bi bi-people-fill">
+                                                <span class="card-text" id="people-count-{{ config.port }}">
+                                                    0
+                                                </span>
+                                            </i>
                                         </h5>
 
-                                        <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
+                                        <p class="card-text hidden" id="camera-port-{{ config.port }}">
+                                            {{ config.port }}
+                                        </p>
 
                                         <!-- Estado de la cámara (online/offline) -->
                                         <span id="camera-status-{{ config.port }}" class="camera-status">
@@ -194,6 +208,8 @@
                 const modalTitle = document.getElementById('cameraModalLabel');
                 const cameraModal = new bootstrap.Modal(document.getElementById('cameraModal'));
                 const personCount = document.getElementById('peopleCountValue');
+                const status = document.getElementById('status-text');
+                const statusDot = document.getElementById('status-dot');
 
                 // Actualizar el título del modal
                 modalTitle.textContent = `Cámara ${port}`;
@@ -209,7 +225,9 @@
                         if (data.frame) {
                             // Actualizar la imagen del modal con el frame recibido
                             modalImage.src = `data:image/jpeg;base64,${data.frame}`;
-                            personCount.textContent = data.people_count;
+                            personCount.textContent = `${data.count}`;
+                            statusDot.style.backgroundColor = "green";
+                            status.textContent = `Conectado`;
                         }
                     };
 
@@ -218,6 +236,8 @@
                     };
 
                     ws.onclose = () => {
+                        statusDot.style.backgroundColor = "red";
+                        status.textContent = `Desconectado`;
                         console.log(`WebSocket cerrado para puerto ${port}`);
                         delete activeWebSockets[port]; // Eliminar la referencia
                     };
