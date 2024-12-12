@@ -44,7 +44,7 @@ def obtener_datos_vehiculos():
     # Usar JSESSIONID para realizar la solicitud de vehículos
     vehicle_url = "http://200.63.96.130:8088/StandardApiAction_queryUserVehicle.action"
     vehicle_params = {
-        "jsession": 'bf84a2592d9749c6be4eb3bc42dfe601',
+        "jsession": '3900ce4adf574c42b3ba7bbd00746447',
         "language": "en"
     }
 

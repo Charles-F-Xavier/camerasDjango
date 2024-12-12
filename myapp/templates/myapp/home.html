@@ -326,6 +326,20 @@
                         "plugins": ["wholerow", "checkbox"]
                     });
                 });
+
+                $('#tree-js').on("changed.jstree", function (e, data) {
+                    console.log(data.selected);
+                    const selected = data.selected;
+                    const devidno = selected[1]
+                    console.log(devidno);
+
+                    if (devidno) {
+                        console.log(`Devino seleccionado: ${devidno}`);
+                        //sendDevidnoToServer(devidno); // Enviar al servidor
+                    } else {
+                        console.warn('El nodo seleccionado no tiene un devidno asociado.');
+                    }
+                });
             });
         </script>
 

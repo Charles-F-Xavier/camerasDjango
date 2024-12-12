@@ -178,25 +178,45 @@ class WebSocketVideoHandler {
     }
 }
 
+// Objeto global para almacenar las conexiones WebSocket por puerto
+const videoHandlers = {};
 
 function initializeVideoFeeds() {
     console.log('Initializing video feeds...');
     const cameras = document.querySelectorAll('.camera');
 
     cameras.forEach(camera => {
-        // Buscar el puerto en el texto del overlay
         const portElement = camera.querySelector('.card-img-overlay');
         const videoElement = camera.querySelector('.camera-image');
-
 
         if (portElement && videoElement) {
             const portText = portElement.textContent.trim();
             console.log(`Initializing camera with port text: "${portText}" and video element ID ${videoElement.id}`);
-            new WebSocketVideoHandler(portText, videoElement.id);
+
+            // Crear una instancia del manejador de video y almacenarla
+            const handler = new WebSocketVideoHandler(portText, videoElement.id);
+            videoHandlers[portText] = handler; // Guardar por puerto
         } else {
             console.error('Missing required elements for camera:', camera);
         }
     });
+}
+
+function sendDevidnoToServer(devidno) {
+    // Encuentra cualquier WebSocket activo en el objeto videoHandlers
+    const handlerKeys = Object.keys(videoHandlers);
+    if (handlerKeys.length > 0) {
+        const handler = videoHandlers[handlerKeys[0]]; // Usar la primera conexión activa
+        if (handler.ws && handler.ws.readyState === WebSocket.OPEN) {
+            const message = JSON.stringify({ type: 'select_devino', devidno: devidno });
+            handler.ws.send(message);
+            console.log(`Enviado al servidor: ${message}`);
+        } else {
+            console.error('No se pudo enviar el devidno. WebSocket no está conectado.');
+        }
+    } else {
+        console.error('No hay instancias de WebSocket disponibles.');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
