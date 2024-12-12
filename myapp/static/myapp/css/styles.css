@@ -37,7 +37,6 @@ html, body {
 }
 
 .main {
-
     min-height: 100%;
     width: 100%;
     overflow: hidden;
@@ -47,7 +46,7 @@ html, body {
 
 .main-content {
     margin-left: 70px;
-    height: calc(100vh - 60px - 83px);
+    min-height: calc(100vh - 60px - 41px);
     flex: 1;
     padding: 20px;
     background-color: #f8f9fa;
@@ -58,7 +57,6 @@ html, body {
     color: white !important;
     padding-top: 0;
     padding-bottom: 0;
-
 }
 
 #sidebar {

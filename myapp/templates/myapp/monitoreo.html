@@ -3,28 +3,10 @@
 {% block content %}
     <main class="py-2">
         <div class="container-fluid">
-            <div class="row justify-content-around py-2">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div class="dropdown" id="camera-dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                            N Cameras
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            {% for i in camera_count_range %}
-                                <li>
-                                    <a class="dropdown-item" href="#"
-                                       onclick="updateCameraCount(event, {{ i }})">{{ i }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
             <div class="row justify-content-center">
                 <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
                     <div id="camera-display-container" style="height: 65vh;">
-                        <iframe src="http://200.63.96.130:8088/808gps/open/player/video.html?lang=en&devIdno=562408000003&jsession=3900ce4adf574c42b3ba7bbd00746447" style="height: 65vh; width: 100%;">
+                        <iframe src="http://200.63.96.130:8088/808gps/open/player/video.html?lang=en&devIdno=562408000003&jsession={{ jsession }}" style="height: 65vh; width: 100%;">
 
                         </iframe>
                         {% comment %}<div class="camera-display">

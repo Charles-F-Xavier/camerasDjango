@@ -3,45 +3,45 @@
 {% block content %}
     <main class="py-2">
         <div class="container-fluid">
-            <div class="row justify-content-around py-2">
-                <div class="col-sm-12 col-md-12 col-lg-12">
-                    <div class="dropdown" id="camera-dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                            N Cameras
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-dark">
-                            {% for i in camera_count_range %}
-                                <li>
-                                    <a class="dropdown-item" href="#"
-                                       onclick="updateCameraCount(event, {{ i }})">{{ i }}</a>
-                                </li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
-                    <div class="btn-group mb-3" role="group" aria-label="Layout buttons">
-                        <button id="layout-fullscreen" class="btn btn-outline-primary">
+            <div class="d-sm-flex row justify-content-lg-between justify-content-sm-center py-2">
+                <div class="col-sm-10 col-md-9 col-lg-9">
+                    <div class="btn-group" role="group" aria-label="Layout buttons">
+                        <button id="layout-fullscreen" class="btn btn-outline-secondary" disabled>
                             <i class="bi bi-square"></i> <!-- Ícono para pantalla completa -->
                         </button>
-                        <button id="layout-grid-4" class="btn btn-outline-secondary">
+                        <button id="layout-grid-4" class="btn btn-outline-secondary" disabled>
                             <i class="bi bi-grid-fill"></i> <!-- Ícono para 4 cámaras -->
                         </button>
-                        <button id="layout-grid-9" class="btn btn-outline-secondary">
+                        <button id="layout-grid-9" class="btn btn-outline-secondary" disabled>
                             <i class="bi bi-grid-3x3-gap-fill"></i> <!-- Ícono para 9 cámaras -->
                         </button>
-                        <button id="layout-highlight" class="btn btn-outline-secondary">
+                        <button id="layout-highlight" class="btn btn-outline-secondary" disabled>
                             <i class="bi bi-layout-text-sidebar-reverse"></i>
                             <!-- Ícono para 1 cámara grande y 5 pequeñas -->
                         </button>
-                        <button id="adjust-aspect-ratio" class="btn btn-outline-secondary">
+                        <button id="adjust-aspect-ratio" class="btn btn-outline-secondary" disabled>
                             <i class="bi bi-arrows-fullscreen"></i> <!-- Ícono para ajustar aspecto -->
                         </button>
+                        <div class="btn-group" role="group" id="camera-dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                <i class="bi bi-camera"></i>
+                            </button>
+                            <ul class="dropdown-menu dropdown-menu-dark">
+                                {% for i in camera_count_range %}
+                                    <li>
+                                        <a class="dropdown-item" href="#"
+                                           onclick="updateCameraCount(event, {{ i }})">{{ i }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
                     </div>
-                    <div id="camera-display-container" style="height: 65vh;">
+                </div>
+            </div>
+            <div class="row justify-content-between py-2">
+                <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
+                    <div id="camera-display-container" style="height: 75vh;">
                         <style>
                             .camera-status {
                                 position: absolute;
@@ -168,12 +168,7 @@
                         </style>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-2 col-lg-2 order-sm-first order-md-last order-lg-last">
-                    <div class="row justify-content-around">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <h3>Camaras</h3>
-                        </div>
-                    </div>
+                <div class="col-sm-12 col-md-3 col-lg-3 order-sm-first order-md-last order-lg-last">
                     <div id="tree-js"></div>
                     <div class="row justify-content-between">
                         <div class="col-sm-12 col-md-12 col-lg-12" id="jstree">
@@ -282,12 +277,12 @@
 
                 camera_config.forEach((camera) => {
                     const imageRef = document.getElementById(`camera-feed-${camera.port}`); // Reemplaza con el ID de tu elemento de imagen
-                    const personCountRef = document.getElementById(`person-count-${camera.port}`); // Reemplaza con el ID de tu elemento de conteo
+                    const personCountRef = document.getElementById(`people-count-${camera.port}`); // Reemplaza con el ID de tu elemento de conteo
 
                     const ws = new WebSocket(`ws://127.0.0.1:${camera.port}/ws`);
 
                     ws.onopen = () => {
-                        console.log('Conexión WebSocket abierta');
+                        //console.log('Conexión WebSocket abierta');
                     };
 
                     ws.onmessage = (event) => {
@@ -296,16 +291,16 @@
                         const data = JSON.parse(event.data);
                         if (data.frame) {
                             imageRef.src = `data:image/jpeg;base64,${data.frame}`;
-                            personCountRef.textContent = data.people_count;
+                            personCountRef.textContent = `${data.count}`;
                         }
                     };
 
                     ws.onclose = (event) => {
-                        console.log('Conexión WebSocket cerrada:', event);
+                        //console.log('Conexión WebSocket cerrada:', event);
                     };
 
                     ws.onerror = (error) => {
-                        console.error('Error en la conexión WebSocket:', error.type);
+                        //console.error('Error en la conexión WebSocket:', error.type);
                     };
 
                 });
@@ -313,9 +308,6 @@
 
             $(document).ready(function () {
 
-                console.log("Ready");
-                console.log({{ tree|safe }});
-                console.log(typeof {{ tree|safe }});
                 let data_tree = JSON.stringify({{ tree|safe }});
                 $(function () {
                     $('#tree-js').jstree({

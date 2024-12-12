@@ -3,7 +3,8 @@
     <div class="container-fluid px-0 ps-2" style="justify-content: space-between !important;">
         <img id="sidebar-logo" src="{% static 'resources/logo2.png' %}" width="200"
              class="animate__animated animate__fadeInLeft d-lg-none d-sm-block d-md-block" alt="Logo">
-        <button class="toggle-btn d-lg-none d-sm-block d-md-block pe-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+        <button class="toggle-btn d-lg-none d-sm-block d-md-block pe-2" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasExample"
                 aria-controls="offcanvasExample" aria-expanded="false" aria-label="Toggle navigation">
             <i class="lni lni-grid-alt"></i>
         </button>
@@ -17,26 +18,94 @@
 
     </div>
 </nav>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+<div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasExample"
      aria-labelledby="offcanvasExampleLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+        <img id="sidebar-logo" src="{% static 'resources/logo2.png' %}" width="60%"
+             class="animate__animated animate__fadeInLeft d-lg-none d-sm-block d-md-block" alt="Logo">
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
-        <div>
-            Some text as placeholder. In real life you can have the elements you have chosen. Like, text,
-            images, lists, etc.
-        </div>
         <div class="dropdown mt-3">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
-                Dropdown button
-            </button>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <ul class="sidebar-nav">
+                <li class="sidebar-item">
+                    <a href="{% url 'home' %}" class="sidebar-link">
+                        <i class="lni lni-user icon-side"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{% url 'monitoreo' %}" class="sidebar-link">
+                        <i class="lni lni-camera"></i>
+                        <span>Monitoreo</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{% url 'dashboard' %}" class="sidebar-link">
+                        <i class="lni lni-agenda"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <!--<li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                       data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                        <i class="lni lni-protection"></i>
+                        <span>Auth</span>
+                    </a>
+                    <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">Login</a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link">Register</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link collapsed has-dropdown" data-bs-toggle="collapse"
+                       data-bs-target="#multi" aria-expanded="false" aria-controls="multi">
+                        <i class="lni lni-layout"></i>
+                        <span>Multi Level</span>
+                    </a>
+                    <ul id="multi" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                        <li class="sidebar-item">
+                            <a href="#" class="sidebar-link collapsed" data-bs-toggle="collapse"
+                               data-bs-target="#multi-two" aria-expanded="false" aria-controls="multi-two">
+                                Two Links
+                            </a>
+                            <ul id="multi-two" class="sidebar-dropdown list-unstyled collapse">
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Link 1</a>
+                                </li>
+                                <li class="sidebar-item">
+                                    <a href="#" class="sidebar-link">Link 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-popup"></i>
+                        <span>Notification</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <i class="lni lni-cog"></i>
+                        <span>Setting</span>
+                    </a>
+                </li>-->
             </ul>
+
+        </div>
+    </div>
+    <div class="offcanvas-footer" style="padding: 1rem">
+        <div class="sidebar-footer">
+            <a href="#" class="sidebar-link">
+                <i class="lni lni-exit"></i>
+                <span>Logout</span>
+            </a>
         </div>
     </div>
 </div>

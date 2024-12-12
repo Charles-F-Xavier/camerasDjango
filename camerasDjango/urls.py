@@ -27,4 +27,5 @@ urlpatterns = [
     path('home/', views.home, name='home'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('monitoreo/', views.monitoreo, name='monitoreo'),
+    path('log-error/', views.log_error, name='log_error'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

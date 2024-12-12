@@ -1,6 +1,8 @@
 import json
-
+import os
 import requests
+from django.db.models import Sum
+from django.db.models.functions import TruncDate
 from django.http import JsonResponse
 from django.core import serializers
 from django.db import connection, OperationalError
@@ -8,7 +10,11 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import math
 from .models import Count
+from django.views.decorators.csrf import csrf_exempt
+from datetime import datetime
 
+# Ruta al archivo de logs
+LOG_FILE_PATH = os.path.join(os.path.dirname(__file__), 'websocket.log')
 
 def index(request):
     return render(request, 'myapp/index.html')
@@ -36,7 +42,9 @@ def obtener_datos_vehiculos():
         return None
 
     # Obtener la cookie JSESSIONID
-    jsession = login_response.cookies.get("JSESSIONID")
+    response_data=json.loads(login_response.text)
+    jsession =response_data.get("JSESSIONID")
+
     if not jsession:
         print("No se pudo obtener el JSESSIONID.")
         return None
@@ -44,7 +52,7 @@ def obtener_datos_vehiculos():
     # Usar JSESSIONID para realizar la solicitud de vehículos
     vehicle_url = "http://200.63.96.130:8088/StandardApiAction_queryUserVehicle.action"
     vehicle_params = {
-        "jsession": '3900ce4adf574c42b3ba7bbd00746447',
+        "jsession": jsession,
         "language": "en"
     }
 
@@ -221,15 +229,53 @@ def dashboard(request):
 
     data_serialized = serializers.serialize('json', camera_data)
 
+    grouped_data=(
+        Count.objects.annotate(date_only=TruncDate('date'))
+        .values('date_only')
+        .annotate(total_quantity=Sum('quantity'))
+        .order_by('date_only')
+    )
+
+    #crear datos para el pie chart
+    pie_chart_data = [
+        {"name":str(entry['date_only']),"value":entry['total_quantity']}
+        for entry in grouped_data
+    ]
+
     context = {
         'camera_data': camera_data,
-        'data_seria': data_serialized
+        'data_seria': data_serialized,
+        'chart_data': pie_chart_data,
     }
     # Pasar los datos al template
     return render(request, 'myapp/dashboard.html', context)
 
 
 def monitoreo(request):
+    # URL del endpoint de login
+    login_url = "http://200.63.96.130:8088/StandardApiAction_login.action"
+    login_params = {
+        "account": "Administrador",
+        "password": "7c6b75d80d0dc139126fbecdb67e0d91"
+    }
+
+    # Realizar la llamada al endpoint de login
+    login_response = requests.get(login_url, params=login_params)
+
+    # Verificar si la solicitud fue exitosa
+    if login_response.status_code != 200:
+        print("Error al realizar el login:", login_response.text)
+        return None
+
+    # Obtener la cookie JSESSIONID
+    response_data = json.loads(login_response.text)
+    jsession = response_data.get("JSESSIONID")
+
+    if not jsession:
+        print("No se pudo obtener el JSESSIONID.")
+        return None
+
+
     devices = Count.objects.values('device_id').distinct()
     camera_configs = [
         {'port': 8001, 'name': 'CH1'},
@@ -272,4 +318,30 @@ def monitoreo(request):
         'cols': cols,
         'rows': rows,
         'camera_configs': camera_configs,
-        'devices': devices})
+        'devices': devices,
+        'jsession': jsession,
+    })
+
+
+@csrf_exempt
+def log_error(request):
+    if request.method == 'POST':
+        try:
+            # Parsear el cuerpo de la solicitud
+            data = json.loads(request.body)
+            error_message = data.get('error', 'No error message provided')
+            camera_port = data.get('cameraPort', 'Unknown port')
+            timestamp = data.get('timestamp', datetime.utcnow().isoformat())
+
+            # Formatear el mensaje de log
+            log_message = f"[{timestamp}] [Camera Port: {camera_port}] {error_message}\n"
+
+            # Escribir en el archivo de logs
+            with open(LOG_FILE_PATH, 'a') as log_file:
+                log_file.write(log_message)
+
+            return JsonResponse({'status': 'success'}, status=200)
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=400)
