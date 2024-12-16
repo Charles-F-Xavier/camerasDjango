@@ -9,12 +9,16 @@ from django.db import connection, OperationalError
 from django.shortcuts import render
 from django.http import HttpResponse
 import math
+
+from django.template.loader import render_to_string
+
 from .models import Count
 from django.views.decorators.csrf import csrf_exempt
 from datetime import datetime
 
 # Ruta al archivo de logs
 LOG_FILE_PATH = os.path.join(os.path.dirname(__file__), 'websocket.log')
+
 
 def index(request):
     return render(request, 'myapp/index.html')
@@ -24,53 +28,76 @@ def login(request):
     return render(request, 'myapp/login.html')
 
 
-# Función para conectarse al API y obtener los datos
-def obtener_datos_vehiculos():
+def get_jsession(account="Administrador", password="7c6b75d80d0dc139126fbecdb67e0d91"):
+    """
+    Realiza el login en el sistema y devuelve el JSESSIONID.
+
+    Args:
+        account (str): El nombre de usuario para el login.
+        password (str): La contraseña en formato hash MD5.
+
+    Returns:
+        str: El valor del JSESSIONID si el login fue exitoso.
+        None: Si ocurrió un error o no se obtuvo el JSESSIONID.
+    """
     # URL del endpoint de login
     login_url = "http://200.63.96.130:8088/StandardApiAction_login.action"
+
+    # Parámetros del login
     login_params = {
-        "account": "Administrador",
-        "password": "7c6b75d80d0dc139126fbecdb67e0d91"
+        "account": account,
+        "password": password
     }
 
-    # Realizar la llamada al endpoint de login
-    login_response = requests.get(login_url, params=login_params)
+    try:
+        # Realizar la llamada al endpoint de login
+        login_response = requests.get(login_url, params=login_params)
 
-    # Verificar si la solicitud fue exitosa
-    if login_response.status_code != 200:
-        print("Error al realizar el login:", login_response.text)
+        # Verificar si la solicitud fue exitosa
+        if login_response.status_code != 200:
+            print("Error al realizar el login:", login_response.text)
+            return None
+
+        # Obtener la cookie JSESSIONID
+        response_data = login_response.json()
+        jsession = response_data.get("JSESSIONID")
+
+        if not jsession:
+            print("No se pudo obtener el JSESSIONID.")
+            return None
+
+        return jsession
+
+    except Exception as e:
+        print("Error en la solicitud de login:", str(e))
         return None
 
-    # Obtener la cookie JSESSIONID
-    response_data=json.loads(login_response.text)
-    jsession =response_data.get("JSESSIONID")
 
+# Función para conectarse al API y obtener los datos
+def obtener_datos_vehiculos():
+    jsession = get_jsession()
     if not jsession:
-        print("No se pudo obtener el JSESSIONID.")
         return None
 
     # Usar JSESSIONID para realizar la solicitud de vehículos
     vehicle_url = "http://200.63.96.130:8088/StandardApiAction_queryUserVehicle.action"
-    vehicle_params = {
-        "jsession": jsession,
-        "language": "en"
-    }
+    vehicle_params = {"jsession": jsession, "language": "en"}
 
-    vehicle_response = requests.get(vehicle_url, params=vehicle_params)
-
-    # Verificar si la solicitud fue exitosa
-    if vehicle_response.status_code != 200:
-        print("Error al obtener los datos de vehículos:", vehicle_response.text)
+    try:
+        vehicle_response = requests.get(vehicle_url, params=vehicle_params)
+        if vehicle_response.status_code != 200:
+            print("Error al obtener los datos de vehículos:", vehicle_response.text)
+            return None
+        return vehicle_response.json()
+    except Exception as e:
+        print("Error al realizar la solicitud de vehículos:", str(e))
         return None
-
-    # Retornar los datos en formato JSON
-    return vehicle_response.json()
 
 
 # Función para organizar el JSON en un árbol jerárquico
 def organizar_json(data):
     # Crear la estructura raíz
-    tree = {"Vtraxx": []}
+    tree = {"Centro Monitoreo": []}
 
     # Crear un diccionario de empresas basado en el ID
     empresas = {company["id"]: {"name": company["nm"], "vehicles": []} for company in data["companys"]}
@@ -85,21 +112,20 @@ def organizar_json(data):
                 "channels": []
             }
 
-            # Separar los canales si están en una lista como "CH1, CH2, CH3, ..."
-            if isinstance(vehicle["dl"], str):
-                canales = vehicle["dl"].split(",")  # Separar por coma
-                for canal in canales:
-                    vehicle_data["channels"].append({"channel_id": canal.strip(), "channel_name": canal.strip()})
-            else:
+            # Si "dl" es una lista, recorrer sus elementos
+            if isinstance(vehicle["dl"], list):
                 for channel in vehicle["dl"]:
-                    vehicle_data["channels"].append({
-                        "channel_id": channel["id"],
-                        "channel_name": channel["cn"].split(",")
-                    })
+                    canales = channel["cn"].split(",")  # Dividir la cadena de canales por coma
+                    # Agregar cada canal como un objeto en "channels"
+                    for canal in canales:
+                        vehicle_data["channels"].append({
+                            "channel_id": channel["id"],  # ID del canal
+                            "channel_name": canal.strip()  # Nombre del canal limpio
+                        })
 
             # Agregar el vehículo a la empresa correspondiente
             empresas[empresa_id]["vehicles"].append(vehicle_data)
-
+    print(empresas)
     # Agregar las empresas al árbol
     tree["Vtraxx"] = list(empresas.values())
 
@@ -125,15 +151,15 @@ def transformar_para_jstree(data):
             tree.append(vehiculo_node)
 
             for canal in vehiculo["channels"]:
-                for ch_name in canal["channel_name"]:
-                    # Crear el nodo para el canal
-                    canal_node = {
-                        "id": f"{canal['channel_id']}",
-                        "parent": f"{vehiculo['name']}",
-                        "text": ch_name
-                    }
-                    tree.append(canal_node)
-
+                # Crear el nodo para el canal, asegurando un id único con el nombre del vehículo y el canal
+                canal_node = {
+                    "id": f"{canal['channel_id']}_{canal['channel_name']}",
+                    # Combinando el id del canal y el nombre del vehículo
+                    "parent": f"{vehiculo['name']}",
+                    "text": canal["channel_name"]
+                }
+                tree.append(canal_node)
+        print(tree)
     return json.dumps(tree, indent=4)
 
 
@@ -229,16 +255,16 @@ def dashboard(request):
 
     data_serialized = serializers.serialize('json', camera_data)
 
-    grouped_data=(
+    grouped_data = (
         Count.objects.annotate(date_only=TruncDate('date'))
         .values('date_only')
         .annotate(total_quantity=Sum('quantity'))
         .order_by('date_only')
     )
 
-    #crear datos para el pie chart
+    # crear datos para el pie chart
     pie_chart_data = [
-        {"name":str(entry['date_only']),"value":entry['total_quantity']}
+        {"name": str(entry['date_only']), "value": entry['total_quantity']}
         for entry in grouped_data
     ]
 
@@ -252,75 +278,37 @@ def dashboard(request):
 
 
 def monitoreo(request):
-    # URL del endpoint de login
-    login_url = "http://200.63.96.130:8088/StandardApiAction_login.action"
-    login_params = {
-        "account": "Administrador",
-        "password": "7c6b75d80d0dc139126fbecdb67e0d91"
-    }
-
-    # Realizar la llamada al endpoint de login
-    login_response = requests.get(login_url, params=login_params)
-
-    # Verificar si la solicitud fue exitosa
-    if login_response.status_code != 200:
-        print("Error al realizar el login:", login_response.text)
-        return None
-
-    # Obtener la cookie JSESSIONID
-    response_data = json.loads(login_response.text)
-    jsession = response_data.get("JSESSIONID")
-
+    jsession = get_jsession()
     if not jsession:
-        print("No se pudo obtener el JSESSIONID.")
-        return None
+        return JsonResponse({"error": "No se pudo autenticar."}, status=500)
 
+    vehicle_data = obtener_datos_vehiculos()
+    if not vehicle_data:
+        return JsonResponse({"error": "No se pudo obtener información de los vehículos."}, status=500)
 
-    devices = Count.objects.values('device_id').distinct()
-    camera_configs = [
-        {'port': 8001, 'name': 'CH1'},
-        {'port': 8002, 'name': 'CH2'},
-        {'port': 8003, 'name': 'CH3'},
-        {'port': 8004, 'name': 'CH4'},
-        {'port': 8005, 'name': 'CH5'},
-        {'port': 8006, 'name': 'CH6'},
-        {'port': 8007, 'name': 'CH7'},
-        {'port': 8008, 'name': 'CH8'},
-        {'port': 8009, 'name': 'CH9'},
-    ]
-
-    camera_count = int(request.GET.get('camera_count', 9))
-    camera_configs = camera_configs[:camera_count]
-    if camera_count == 1:
-        cols = 1
-        rows = 1
-    elif camera_count == 2:
-        cols = 2
-        rows = 1
-    elif 3 <= camera_count <= 4:
-        cols = 2
-        rows = 2
-    elif 5 <= camera_count <= 6:
-        cols = 3
-        rows = 2
-    elif 7 <= camera_count <= 9:
-        cols = 3
-        rows = 3
-    else:
-        # Para más de 9 cámaras, se utiliza un cálculo general basado en la raíz cuadrada
-        cols = math.ceil(math.sqrt(camera_count))
-        rows = math.ceil(camera_count / cols)
-
-    camera_count_range = range(1, camera_count + 1)
+    tree = transformar_para_jstree(organizar_json(vehicle_data))
 
     return render(request, 'myapp/monitoreo.html', {
-        'camera_count_range': camera_count_range,
-        'cols': cols,
-        'rows': rows,
-        'camera_configs': camera_configs,
-        'devices': devices,
         'jsession': jsession,
+        'tree': tree,
     })
+
+
+def load_camera_iframe(request):
+    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
+        devidno = request.GET.get('devidno')
+        jsession = get_jsession()
+
+        if not jsession:
+            return JsonResponse({'error': 'No se pudo autenticar para generar el iframe.'}, status=500)
+
+        iframe_html = render_to_string('myapp/camera_iframe.html', {
+            'devidno': devidno,
+            'jsession': jsession
+        })
+
+        return JsonResponse({'iframe_html': iframe_html})
+    return JsonResponse({'error': 'Invalid request'}, status=400)
 
 
 @csrf_exempt

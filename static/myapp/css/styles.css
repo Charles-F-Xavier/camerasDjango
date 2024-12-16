@@ -1,0 +1,246 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+::after,
+::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+h1 {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    *display: flex;
+    *height: 100%;
+}
+
+.main {
+    min-height: 100%;
+    width: 100%;
+    overflow: hidden;
+    transition: all 0.35s ease-in-out;
+    background-color: #fafbfe;
+}
+
+.main-content {
+    margin-left: 70px;
+    min-height: calc(100vh - 60px - 41px);
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.navbar {
+    background-color: #252525 !important;
+    color: white !important;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#sidebar {
+    position: fixed;
+    height: 100vh;
+    width: 70px;
+    min-width: 70px;
+    z-index: 1000;
+    transition: all .3s ease-in-out;
+    background-color: #252525;
+    display: flex;
+    flex-direction: column;
+}
+
+.toggle-btn #sidebar-logo {
+    display: none;
+    width: 80%;
+    *transition: all 0.3s ease; /* Transición para el logo */
+}
+
+.toggle-btn #sidebar-icon {
+    width: 50px;
+    height: auto;
+    *transition: all 0.3s ease; /* Agrega la transición para el icono */
+}
+
+#sidebar.expand .toggle-btn #sidebar-logo {
+    display: block;
+}
+
+#sidebar.expand .toggle-btn #sidebar-icon {
+    display: none;
+}
+
+#sidebar.expand {
+    width: 230px;
+    min-width: 230px;
+}
+
+#sidebar.expand + .main {
+    margin-left: 230px; /* Margen cuando el sidebar está expandido */
+    width: calc(100% - 230px);
+}
+
+.toggle-btn {
+    background-color: transparent;
+    cursor: pointer;
+    border: 0;
+    padding: .25rem .25rem;
+}
+
+.toggle-btn i {
+    font-size: 1.5rem;
+    color: #FFF;
+}
+
+.sidebar-logo {
+    margin: auto 0;
+}
+
+.sidebar-logo a {
+    color: #FFF;
+    font-size: 1.15rem;
+    font-weight: 600;
+}
+
+#sidebar:not(.expand) .sidebar-logo,
+#sidebar:not(.expand) a.sidebar-link span {
+    display: none;
+}
+
+.sidebar-nav {
+    padding: 2rem 0;
+    flex: 1 1 auto;
+}
+
+a.sidebar-link {
+    display: flex !important;
+    align-items: center;
+    height: 50px;
+    min-height: 50px;
+    background-color: gray;
+    border-radius: 100px;
+    padding: .25rem .25rem;
+    margin: .9rem .6rem;
+    color: #FFF;
+    display: block;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.sidebar-link span {
+    font-size: 0.9rem;
+}
+
+.sidebar-link i {
+    font-size: 2rem;
+    margin-right: .75rem;
+    padding: 5px;
+}
+
+a.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .075);
+    border-left: 3px solid #3b7ddd;
+}
+
+.sidebar-item {
+    position: relative;
+}
+
+.icon-side {
+    *background-color: white;
+    *margin: 5px;
+    *color: black;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+#sidebar:not(.expand) .sidebar-item .sidebar-dropdown {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    background-color: #0e2238;
+    padding: 0;
+    min-width: 15rem;
+    display: none;
+}
+
+#sidebar:not(.expand) .sidebar-item:hover .has-dropdown + .sidebar-dropdown {
+    display: block;
+    max-height: 15em;
+    width: 100%;
+    opacity: 1;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"]::after {
+    border: solid;
+    border-width: 0 .075rem .075rem 0;
+    content: "";
+    display: inline-block;
+    padding: 2px;
+    position: absolute;
+    right: 1.5rem;
+    top: 1.4rem;
+    transform: rotate(-135deg);
+    transition: all .2s ease-out;
+}
+
+#sidebar.expand .sidebar-link[data-bs-toggle="collapse"].collapsed::after {
+    transform: rotate(45deg);
+    transition: all .2s ease-out;
+}
+
+.cap-profile {
+    border-radius: 30px 0 0 30px;
+    padding: 8px;
+}
+
+.icon-profile {
+    font-size: 2.2rem;
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+@media screen and (max-width: 992px) {
+    #sidebar {
+        display: none !important;
+        width: 350px;
+
+    }
+
+    .main-content {
+        height: auto !important;
+        flex: 1;
+        padding: 20px;
+        margin-left: 0;
+        background-color: #f8f9fa;
+    }
+}
+
+#footer {
+    width: 100%;
+    bottom: 0;
+    background-color: #252525 !important;
+}

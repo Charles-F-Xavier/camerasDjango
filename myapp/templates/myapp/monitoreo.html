@@ -6,156 +6,85 @@
             <div class="row justify-content-center">
                 <div class="col-sm-11 col-md-9 col-lg-9 order-sm-last order-md-first order-lg-first">
                     <div id="camera-display-container" style="height: 65vh;">
-                        <iframe src="http://200.63.96.130:8088/808gps/open/player/video.html?lang=en&devIdno=562408000003&jsession={{ jsession }}" style="height: 65vh; width: 100%;">
-
+                        <iframe src="http://200.63.96.130:8088/808gps/open/player/video.html?lang=en&devIdno=0&jsession={{ jsession }}"
+                                style="min-height: 75vh; min-width: 100%;">
                         </iframe>
-                        {% comment %}<div class="camera-display">
-                            {% for config in camera_configs %}
-                                <div class="card text-bg-dark camera">
-                                    <img id="camera-feed-{{ config.port }}" src="{% static 'resources/icon.png' %}"
-                                         class="card-img camera-image" alt="Camera {{ config.name }}">
-                                    <div class="card-img-overlay">
-                                        <h5 class="card-title" id="camera-title-{{ config.port }}">Camera {{ config.name }}</h5>
-                                        <p class="card-text" id="camera-port-{{ config.port }}">{{ config.port }}</p>
-                                        <p class="card-text" id="people-count-{{ config.port }}">{{ config.port }}</p>
-                                    </div>
-                                </div>
-                            {% endfor %}
-                        </div>{% endcomment %}
-                        <style>
-                            .camera {
-                                float: left;
-                                width: calc(100% / {{ cols }} - 2px);
-                                height: calc(100% / {{ rows }} - 2px);
-                                background-color: #e0e0e0;
-                                border: 1px solid #ccc;
-                                position: relative;
-                            }
-
-                            @media screen and (max-width: 992px) {
-                                .camera {
-                                    width: 100%;
-                                    height: 100%;
-                                    background-color: #e0e0e0;
-                                    border: 1px solid #ccc;
-                                    position: relative;
-                                }
-                            }
-                        </style>
                     </div>
                 </div>
-                <div class="col-sm-12 col-md-2 col-lg-2 order-sm-first order-md-last order-lg-last">
-                    <div class="row justify-content-around">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <h3>Camaras</h3>
-                        </div>
-                    </div>
-                    <div class="row justify-content-between">
-                        <div class="col-sm-12 col-md-12 col-lg-12">
-                            <ul class="list-group">
-                                {% for device in devices %}
-                                    <li class="list-group-item">
-                                        <input class="form-check-input me-1" type="radio" name="listGroupRadio" value=""
-                                               id="firstRadio" checked>
-                                        <label class="form-check-label" for="firstRadio">
-                                            {{ device.device_id }} (A{{ device.device_id|last }})
-                                        </label>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
-                    </div>
-
+                <div class="col-sm-12 col-md-3 col-lg-3 order-sm-first order-md-last order-lg-last">
+                    <div id="tree-js"></div>
                 </div>
             </div>
         </div>
 
-        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js" integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+                integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8=" crossorigin="anonymous"></script>
 
         <script>
-            function updateCameraCount(event, cameraCount) {
-                // Evita que el enlace ancla recargue la página
-                event.preventDefault();
-
-                // Llama a la URL con el parámetro de `camera_count`
-                fetch(`/?camera_count=${cameraCount}`, {
-                    method: 'GET',
-                    headers: {
-                        'X-Requested-With': 'XMLHttpRequest'
-                    }
-                })
-                    .then(response => response.text())
-                    .then(data => {
-                        document.getElementById('camera-display-container').innerHTML = data;
-                    })
-                    .catch(error => console.error('Error:', error));
-
-                sendCameraCount(cameraCount);
-            }
-
-            function sendCameraCount(cameraCount) {
-                const socket = new WebSocket('wss://echo.websocket.org/.ws');
-
-                socket.onopen = function (e) {
-                    console.log('WebSocket connection established.');
-                    // Enviar un mensaje de prueba al servidor
-                    socket.send('Hello, WebSocket server!', cameraCount);
-                };
-
-                socket.onmessage = function (event) {
-                    console.log('Message received from server:', event.data);
-                };
-
-                socket.onerror = function (error) {
-                    console.error('WebSocket error:', error);
-                };
-
-                socket.onclose = function (e) {
-                    console.log('WebSocket connection closed:', e);
-                };
-            }
-
             $(document).ready(function () {
-                // Código de inicialización de la página
-                console.log('Página cargada');
 
-                const camera_config = {{ camera_configs|safe }};
-
-
-                camera_config.forEach((camera) => {
-                    const imageRef = document.getElementById(`camera-feed-${camera.port}`); // Reemplaza con el ID de tu elemento de imagen
-                    const personCountRef = document.getElementById(`person-count-${camera.port}`); // Reemplaza con el ID de tu elemento de conteo
-
-                    const ws = new WebSocket(`ws://192.168.1.3:${camera.port}/ws`);
-
-                    ws.onopen = () => {
-                        console.log('Conexión WebSocket abierta');
-                    };
-
-                    ws.onmessage = (event) => {
-                        //console.log('Mensaje recibido del servidor:', event.data);
-                        // Puedes procesar la data recibida, como actualizar un elemento <video> o <img>
-                    };
-
-                    ws.onclose = (event) => {
-                        console.log("WebSocket cerrado.");
-                        console.log("Código:", event.code);
-                        console.log("Razón:", event.reason);
-                        console.log("Cierre limpio:", event.wasClean);
-
-                        if (!event.wasClean) {
-                            console.warn("El cierre no fue limpio. Intentando reconectar...");
-                            // Reconectar
-                            setTimeout(() => reconnectWebSocket(), 5000);
-                        }
-                    };
-
-                    ws.onerror = (error) => {
-                        console.error('Error en la conexión WebSocket:', error.type);
-                    };
-
+                let data_tree = JSON.stringify({{ tree|safe }});
+                console.log(data_tree);
+                $(function () {
+                    $('#tree-js').jstree({
+                        'core': {
+                            'data': {{ tree|safe }},
+                            'multiple': false // Permitir seleccionar solo un nodo a la vez
+                        },
+                        "types": {
+                            "default": {
+                                "icon": "bi bi-camera"
+                            },
+                            "root": {
+                                "icon": "bi bi-house"
+                            },
+                            "camera": {
+                                "icon": "bi bi-camera"
+                            },
+                            "device": {
+                                "icon": "bi bi-hdd"
+                            }
+                        },
+                        "checkbox": {},
+                        "plugins": ["wholerow", "checkbox", "types", "changed", "unique", "dnd"]
+                    });
                 });
 
+                $('#tree-js').on("changed.jstree", function (e, data) {
+                    console.log(data.selected);
+                    const selected = data.selected;
+                    const devidno = selected[1].split('_');
+                    console.log(devidno[0]);
+
+                    if (devidno) {
+                        console.log(`Devino seleccionado: ${devidno[0]}`);
+                        //sendDevidnoToServer(devidno); // Enviar al servidor
+                        updateIframe(devidno[0]); // Actualizar el iframe
+                    } else {
+                        console.warn('El nodo seleccionado no tiene un devidno asociado.');
+                    }
+                });
+
+                // Función para actualizar el iframe dinámicamente
+                function updateIframe(devidno) {
+                    const iframeContainer = $('#camera-display-container');
+                    $.ajax({
+                        url: '/load_camera_iframe/', // La ruta de tu vista Django
+                        type: 'GET',
+                        data: {devidno: devidno},
+                        headers: {'X-Requested-With': 'XMLHttpRequest'},
+                        success: function (response) {
+                            if (response.iframe_html) {
+                                iframeContainer.html(response.iframe_html); // Actualiza el iframe dinámicamente
+                            } else {
+                                console.error('No se recibió HTML válido para el iframe.');
+                            }
+                        },
+                        error: function (xhr, status, error) {
+                            console.error('Error al cargar el iframe:', error);
+                        }
+                    });
+                }
 
             });
         </script>

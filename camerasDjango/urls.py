@@ -28,4 +28,5 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('monitoreo/', views.monitoreo, name='monitoreo'),
     path('log-error/', views.log_error, name='log_error'),
+    path('load_camera_iframe/', views.load_camera_iframe, name='load_camera_iframe'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
