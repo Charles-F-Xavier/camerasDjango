@@ -15,7 +15,6 @@ from pathlib import Path
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -27,11 +26,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
 
 INSTALLED_APPS = [
-    #django
+    # django
     'channels',
     'myapp',
     'corsheaders',
@@ -42,12 +40,50 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # 2FA y OTP
-    'django_otp',
-    'django_otp.plugins.otp_totp',  # Para TOTP (Time-based OTP)
-    'two_factor',  # Implementación completa de 2FA
-    'qrcode',  # Generador de códigos QR
+    # Terceros
+    'django.contrib.sites',  # Requerido por django-allauth
+    'allauth',  # Autenticación principal
+    'allauth.account',  # Manejo de cuentas
+    'allauth.socialaccount',  # Autenticación social
+    'allauth.socialaccount.providers.google',  # Google OAuth
+    'django_otp',  # One-Time Password (OTP)
+    'django_otp.plugins.otp_totp',  # OTP basado en tiempo (TOTP)
+    'django_otp.plugins.otp_static',  # OTP con tokens estáticos
+    'two_factor',  # 2FA principal
+    'qrcode',  # Generación de códigos QR
 ]
+
+SOCIALACOUNT_PROVIDERS={
+    "google": {
+        "SCOPE": ["profile", "email"],
+    },
+    "AUTH_PARAMS": {
+        "access_type": "online",
+    }
+}
+
+# Configuración de sitios
+SITE_ID = 1
+
+# Configuración de redirección después del inicio de sesión
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
+
+# Configuración de django-allauth
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',  # Django auth
+    'allauth.account.auth_backends.AuthenticationBackend',  # allauth
+)
+
+# Configuración básica para django-allauth
+ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Permitir usuario o email
+ACCOUNT_EMAIL_REQUIRED = True                     # Email obligatorio
+ACCOUNT_USERNAME_REQUIRED = True                  # Username obligatorio
+ACCOUNT_SIGNUP_REDIRECT_URL = '/'                 # Redirección tras registro
+ACCOUNT_LOGIN_REDIRECT_URL = '/'                  # Redirección tras login
+
+# Configuración de email (requerido para validación de cuentas)
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CHANNEL_LAYERS = {
     "default": {
@@ -79,7 +115,6 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_METHODS = ["*"]
 CORS_ALLOW_HEADERS = ["*"]
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -103,7 +138,6 @@ ASGI_APPLICATION = 'camerasDjango.asgi.application'
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
 
-
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
@@ -115,17 +149,12 @@ DATABASES = {
         'PASSWORD': '',  # La contraseña para el usuario
         'HOST': 'localhost',  # Usar 'localhost' si MySQL está en tu máquina local
         'PORT': '3306',  # Puerto predeterminado para MySQL
+        'OPTIONS': {
+            'sql_mode': 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION',
+        },
     }
 }
 
-# URL de inicio de sesión
-LOGIN_URL = 'two_factor:login'
-LOGOUT_REDIRECT_URL = '/'
-
-# Backends de autenticación
-AUTHENTICATION_BACKENDS = [
-    'django.contrib.auth.backends.ModelBackend',
-]
 
 
 # Password validation
@@ -146,7 +175,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
@@ -157,7 +185,6 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/

@@ -19,16 +19,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from myapp import views
-from two_factor.urls import urlpatterns as two_factor_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('login/', views.login, name='login'),
+    #path('login/', views.login, name='login'),
     path('home/', views.home, name='home'),
     path('dashboard/', views.dashboard, name='dashboard'),
     path('monitoreo/', views.monitoreo, name='monitoreo'),
     path('log-error/', views.log_error, name='log_error'),
     path('load_camera_iframe/', views.load_camera_iframe, name='load_camera_iframe'),
-    path('', (two_factor_urls,'two_factor','two_factor')),  # URLs de django-two-factor-auth
+    path('accounts/', include('allauth.urls')),  # Manejo de cuentas y OAuth
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

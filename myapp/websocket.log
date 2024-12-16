@@ -8177,3 +8177,740 @@ nt]
 [2024-12-16T15:59:53.981Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
 [2024-12-16T15:59:53.982Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
 [2024-12-16T15:59:53.982Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.858Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.857Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.858Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.859Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.859Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.859Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.859Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.860Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.860Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.861Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.860Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.861Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.861Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.861Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.862Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.862Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.862Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.863Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.862Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.863Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.863Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.864Z] [Camera Port: 8001] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.864Z] [Camera Port: 8001] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.865Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:44.864Z] [Camera Port: 8001] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:44.865Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:44.865Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:48.929Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:48.930Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:48.931Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:48.930Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:48.930Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:48.929Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:48.960Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:48.961Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:48.961Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:49.117Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:42:49.117Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:49.336Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:49.336Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:49.336Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:49.430Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:42:49.430Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:50.557Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:50.558Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:50.559Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:51.947Z] [Camera Port: 8001] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:42:51.948Z] [Camera Port: 8002] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:42:52.886Z] [Camera Port: 8001] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:52.887Z] [Camera Port: 8001] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:53.736Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:53.737Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:57.844Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:57.845Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:57.845Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T18:42:57.845Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:57.985Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:57.985Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:57.986Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T18:42:57.985Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:59.416Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:59.417Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:59.417Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:59.417Z] [Camera Port: 8004] Max reconnection attempts reached
+[2024-12-16T18:42:59.637Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T18:42:59.636Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:42:59.638Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:42:59.638Z] [Camera Port: 8007] Max reconnection attempts reached
+[2024-12-16T18:42:59.946Z] [Camera Port: 8006] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:42:59.946Z] [Camera Port: 8003] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:43:00.042Z] [Camera Port: 8001] Error connecting to WebSocket: undefined
+[2024-12-16T18:43:00.041Z] [Camera Port: 8001] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:00.043Z] [Camera Port: 8001] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:00.043Z] [Camera Port: 8001] Max reconnection attempts reached
+[2024-12-16T18:43:00.820Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:00.821Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:00.821Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T18:43:00.912Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:00.912Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:00.913Z] [Camera Port: 8003] Max reconnection attempts reached
+[2024-12-16T18:43:00.943Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:43:00.991Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:00.991Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T18:43:00.992Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:00.992Z] [Camera Port: 8002] Max reconnection attempts reached
+[2024-12-16T18:43:02.095Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:02.096Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:02.096Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T18:43:13.946Z] [Camera Port: 8009] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:43:13.948Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T18:43:13.948Z] [Camera Port: 8005] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:43:13.948Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T18:43:14.120Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:14.120Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:14.717Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:14.717Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T18:43:14.718Z] [Camera Port: 8004] Max reconnection attempts reached
+[2024-12-16T18:43:14.718Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:14.950Z] [Camera Port: 8007] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:43:14.950Z] [Camera Port: 8007] Max reconnection attempts reached
+[2024-12-16T18:43:15.468Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:15.470Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:15.853Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:15.853Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:43:15.853Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T18:43:15.854Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:15.905Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:15.906Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:15.945Z] [Camera Port: 8003] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:43:15.945Z] [Camera Port: 8003] Max reconnection attempts reached
+[2024-12-16T18:43:16.059Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:43:16.060Z] [Camera Port: 8002] Max reconnection attempts reached
+[2024-12-16T18:43:16.060Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:16.948Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:43:16.949Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T18:43:17.643Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:17.644Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:43:18.412Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:43:18.413Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:09.174Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:09.175Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:09.228Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:09.229Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:09.229Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:10.132Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:10.133Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:10.383Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:10.383Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:10.799Z] [Camera Port: 8003] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:10.800Z] [Camera Port: 8004] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:10.801Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:11.230Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:11.230Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:11.503Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:11.503Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:11.561Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:11.562Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:12.791Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:12.791Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:14.560Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:14.560Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:18.769Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:18.770Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:19.046Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:19.046Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:19.294Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:19.294Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:20.165Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:20.165Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:20.216Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:20.216Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:20.230Z] [Camera Port: 8003] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:20.230Z] [Camera Port: 8006] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:20.230Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:20.252Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:20.252Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:20.681Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:20.681Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:21.146Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+vent]
+[2024-12-16T18:44:27.569Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:27.570Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:27.611Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:27.612Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:27.611Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:27.690Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:27.689Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:27.690Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:28.371Z] [Camera Port: 8003] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:28.371Z] [Camera Port: 8007] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:28.371Z] [Camera Port: 8009] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:28.371Z] [Camera Port: 8005] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:28.513Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:28.513Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:29.048Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:29.048Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:29.193Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:29.193Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:30.305Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:30.305Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:30.338Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:30.338Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:33.283Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:33.283Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:33.283Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:33.583Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:33.583Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:33.583Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:33.960Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:33.960Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:34.053Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:34.053Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:34.054Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:34.462Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:34.462Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:34.462Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:34.565Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:34.565Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:34.566Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:34.587Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:34.697Z] [Camera Port: 8004] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T18:44:35.595Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:35.595Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:36.053Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:36.053Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:41.021Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:41.021Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:41.021Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T18:44:42.358Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T18:44:42.358Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:44:42.358Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:44:42.359Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T18:44:42.395Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:44:42.395Z] [Camera Port: 8003] Max reconnection attempts reached
+n: 
+[2024-12-16T18:56:54.869Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:56:54.869Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:54.870Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:56:54.870Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:54.870Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:54.871Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:54.871Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:54.878Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:54.879Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+
+[2024-12-16T18:56:54.884Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:54.885Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:54.885Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:54.887Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:54.887Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:54.887Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:54.888Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:54.888Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:54.888Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:54.889Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:54.889Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:54.889Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.893Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:58.894Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:58.894Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.893Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.894Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:58.892Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:58.902Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:58.903Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:58.903Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.904Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:58.904Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.904Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:58.918Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.918Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:58.918Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:58.919Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:56:58.919Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.933Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T18:56:58.933Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T18:56:58.938Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T18:56:58.952Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T18:56:58.952Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:19.036Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:12:19.036Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:19.038Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:19.038Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:19.039Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:19.039Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:19.040Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:19.040Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:19.041Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:19.040Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:19.041Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:19.041Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:19.042Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:19.042Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:19.042Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:19.042Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:19.058Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:19.058Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:19.059Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:19.059Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:19.059Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:19.060Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:23.959Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:23.959Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:23.959Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:23.961Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:23.961Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:23.963Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:23.979Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:12:23.979Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:23.999Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:23.999Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:23.999Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:23.999Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:24.000Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:24.000Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:24.000Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:24.000Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:24.001Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:24.001Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:24.002Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:24.001Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:24.099Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:24.100Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:30.983Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:30.984Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:30.983Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:30.984Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T19:12:31.015Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:31.016Z] [Camera Port: 8002] Max reconnection attempts reached
+fined
+[2024-12-16T19:12:31.016Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:31.016Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:31.016Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:31.017Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:31.017Z] [Camera Port: 8003] Max reconnection attempts reached
+[2024-12-16T19:12:31.093Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:31.093Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+
+[2024-12-16T19:12:31.094Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T19:12:31.125Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:31.126Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:31.126Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:31.126Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T19:12:31.177Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:31.177Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:31.177Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:31.178Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T19:12:31.802Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:31.802Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:31.802Z] [Camera Port: 8004] Max reconnection attempts reached
+n: 
+[2024-12-16T19:12:32.823Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:32.823Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:32.824Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:32.824Z] [Camera Port: 8007] Max reconnection attempts reached
+[2024-12-16T19:12:39.556Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:39.555Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:39.556Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:39.960Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:39.960Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:39.960Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:40.039Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:40.040Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:40.040Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:40.087Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:40.088Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:40.776Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:12:40.776Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:41.166Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:41.165Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:41.166Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:41.934Z] [Camera Port: 8005] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:12:41.935Z] [Camera Port: 8007] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:12:42.178Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:42.179Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:42.391Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:42.391Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:44.165Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:12:44.166Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:45.044Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:45.045Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:45.073Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:12:45.073Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:45.321Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:45.320Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:45.321Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:45.777Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:12:45.777Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:58.040Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:58.041Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:58.408Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:58.409Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:58.409Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:58.744Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:58.743Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:58.744Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:12:59.074Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:12:59.075Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:12:59.075Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:00.194Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:00.195Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:00.549Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:00.549Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:00.799Z] [Camera Port: 8006] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:13:00.800Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:13:02.390Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:02.390Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:02.489Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:02.489Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:02.752Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:02.752Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:02.752Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:02.783Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:02.784Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:02.784Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:03.670Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:03.671Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:03.939Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:03.939Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:03.940Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:05.299Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:05.300Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:05.330Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:05.330Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:05.331Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:06.291Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:06.291Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:07.936Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:13:08.209Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:08.210Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:10.049Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:10.050Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:10.050Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:10.050Z] [Camera Port: 8002] Max reconnection attempts reached
+[2024-12-16T19:13:10.323Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:10.325Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:10.324Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:11.411Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:11.411Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:11.411Z] [Camera Port: 8004] Max reconnection attempts reached
+[2024-12-16T19:13:13.122Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:13.122Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:13.122Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T19:13:14.500Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:14.501Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:14.501Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:14.501Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T19:13:15.552Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:15.554Z] [Camera Port: 8007] Max reconnection attempts reached
+[2024-12-16T19:13:15.554Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:15.553Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:15.948Z] [Camera Port: 8006] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:13:16.494Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:16.494Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:16.495Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:16.499Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T19:13:17.827Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+vent]
+[2024-12-16T19:13:17.828Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T19:13:23.210Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:23.211Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:23.211Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:24.097Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:13:24.098Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:24.941Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:24.942Z] [Camera Port: 8004] Max reconnection attempts reached
+[2024-12-16T19:13:24.942Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:24.942Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:27.711Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:27.711Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:27.712Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T19:13:27.713Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:28.028Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:28.028Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:28.028Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T19:13:28.029Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:29.368Z] [Camera Port: 8007] Error connecting to WebSocket: [object Eve[2024-12-16T19:13:29.369Z] [Camera Port: 8007] Max reconnection attempts reached
+[2024-12-16T19:13:29.369Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:31.116Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:31.117Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:31.118Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T19:13:31.119Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:13:31.422Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:13:31.422Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:13:31.423Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T19:13:31.423Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.160Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.160Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.160Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.159Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.161Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.161Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.162Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.162Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.162Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.163Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.162Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.161Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.163Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.163Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.163Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.164Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.164Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.163Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.164Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.164Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.165Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:24:41.165Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:24:41.164Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:24:41.165Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:01.616Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:01.614Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.616Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.617Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+
+[2024-12-16T19:37:01.616Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:01.617Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.617Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:01.618Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:01.618Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.617Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:01.618Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:01.618Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.619Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:01.619Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:01.619Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:01.619Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.620Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:01.620Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.620Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:01.630Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:01.620Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:01.630Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:01.630Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:34.974Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:34.976Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:34.975Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:34.976Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:34.977Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:34.977Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:34.978Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:34.978Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:34.978Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:34.979Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:34.979Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:34.980Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:35.007Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:35.008Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:35.008Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:35.021Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:35.021Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:35.022Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:35.022Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:35.023Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:35.103Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:35.105Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:35.106Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.028Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:37:39.029Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.031Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:39.032Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.031Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:39.043Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:39.041Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:39.043Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:39.042Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.042Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:39.043Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.066Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:39.067Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:39.067Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.082Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:39.082Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:39.083Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.184Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:39.184Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:39.185Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:39.453Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:39.453Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:39.453Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.010Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:46.011Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:46.013Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.014Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T19:37:46.024Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:46.024Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:46.025Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.026Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:46.026Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:46.027Z] [Camera Port: 8002] Max reconnection attempts reached
+[2024-12-16T19:37:46.027Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.102Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:46.103Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.103Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:46.103Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T19:37:46.117Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:46.117Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.117Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:46.118Z] [Camera Port: 8003] Max reconnection attempts reached
+[2024-12-16T19:37:46.276Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:46.276Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:46.277Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.277Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T19:37:46.941Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:46.942Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:46.941Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:46.942Z] [Camera Port: 8007] Max reconnection attempts reached
+[2024-12-16T19:37:49.418Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:49.419Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:49.418Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:49.419Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T19:37:59.066Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:37:59.065Z] [Camera Port: 8004] Max reconnection attempts reached
+[2024-12-16T19:37:59.064Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:59.065Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:59.066Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:59.175Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:59.175Z] [Camera Port: 8002] Max reconnection attempts reached
+ect Event]
+[2024-12-16T19:37:59.175Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:59.299Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:37:59.299Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T19:37:59.299Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:59.765Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:37:59.765Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:37:59.766Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:37:59.766Z] [Camera Port: 8003] Max reconnection attempts reached
+[2024-12-16T19:38:01.136Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:01.136Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:01.137Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T19:38:01.137Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:02.973Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:02.973Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T19:38:02.973Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:02.974Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:03.948Z] [Camera Port: 8007] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:38:03.949Z] [Camera Port: 8007] Max reconnection attempts reached
+[2024-12-16T19:38:04.836Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:04.836Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:40.645Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:40.646Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:40.646Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:41.804Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:41.805Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:41.804Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:42.101Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:42.102Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:42.102Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:43.212Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:43.213Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:43.212Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:43.339Z] [Camera Port: 8004] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:38:43.340Z] [Camera Port: 8006] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:38:43.340Z] [Camera Port: 8007] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:38:43.340Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:38:43.341Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:43.341Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:43.418Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:43.418Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:43.781Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:43.782Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:44.550Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:44.551Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:46.376Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:46.378Z] [Camera Port: 8005] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:46.379Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:46.685Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:46.686Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:46.686Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:47.854Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:47.855Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:47.855Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:49.382Z] [Camera Port: 8006] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:49.381Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:49.382Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:49.785Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:49.785Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:49.786Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:50.094Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:50.095Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:50.095Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:50.515Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:50.516Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:50.515Z] [Camera Port: 8007] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:50.948Z] [Camera Port: 8008] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:38:51.531Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:51.532Z] [Camera Port: 8008] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:53.664Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:53.666Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:53.667Z] [Camera Port: 8005] Max reconnection attempts reached
+[2024-12-16T19:38:56.041Z] [Camera Port: 8002] Error connecting to WebSocket: undefined
+nt]
+[2024-12-16T19:38:56.041Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:56.042Z] [Camera Port: 8002] Max reconnection attempts reached
+[2024-12-16T19:38:57.546Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:57.546Z] [Camera Port: 8003] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:57.547Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:57.547Z] [Camera Port: 8003] Max reconnection attempts reached
+[2024-12-16T19:38:58.204Z] [Camera Port: 8009] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:58.205Z] [Camera Port: 8009] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:38:58.205Z] [Camera Port: 8009] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:58.205Z] [Camera Port: 8009] Max reconnection attempts reached
+[2024-12-16T19:38:59.363Z] [Camera Port: 8008] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:38:59.364Z] [Camera Port: 8008] Error connecting to WebSocket: undefined
+[2024-12-16T19:38:59.364Z] [Camera Port: 8008] Max reconnection attempts reached
+[2024-12-16T19:38:59.939Z] [Camera Port: 8005] Max reconnection attempts reached
+out connecting to WebSocket
+[2024-12-16T19:38:59.940Z] [Camera Port: 8006] Error connecting to WebSocket: Timeout connecting to WebSocket
+[2024-12-16T19:39:00.140Z] [Camera Port: 8006] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:39:00.141Z] [Camera Port: 8006] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:39:00.141Z] [Camera Port: 8006] Max reconnection attempts reached
+[2024-12-16T19:39:00.598Z] [Camera Port: 8005] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:39:00.598Z] [Camera Port: 8005] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:39:00.739Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:39:00.740Z] [Camera Port: 8004] Error connecting to WebSocket: undefined
+[2024-12-16T19:39:00.740Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:39:00.740Z] [Camera Port: 8004] Max reconnection attempts reached
+[2024-12-16T19:39:01.210Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
+[2024-12-16T19:39:01.211Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
+[2024-12-16T19:39:01.211Z] [Camera Port: 8007] Max reconnection attempts reached
