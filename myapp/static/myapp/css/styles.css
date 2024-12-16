@@ -46,9 +46,9 @@ html, body {
 
 .main-content {
     margin-left: 70px;
-    min-height: calc(100vh - 60px - 41px);
+    min-height: calc(100vh - 60px - 43px);
     flex: 1;
-    padding: 20px;
+    *padding: 20px;
     background-color: #f8f9fa;
 }
 

@@ -15,10 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from myapp import views
+from two_factor.urls import urlpatterns as two_factor_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -29,4 +30,5 @@ urlpatterns = [
     path('monitoreo/', views.monitoreo, name='monitoreo'),
     path('log-error/', views.log_error, name='log_error'),
     path('load_camera_iframe/', views.load_camera_iframe, name='load_camera_iframe'),
+    path('', (two_factor_urls,'two_factor','two_factor')),  # URLs de django-two-factor-auth
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

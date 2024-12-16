@@ -125,7 +125,6 @@ def organizar_json(data):
 
             # Agregar el vehículo a la empresa correspondiente
             empresas[empresa_id]["vehicles"].append(vehicle_data)
-    print(empresas)
     # Agregar las empresas al árbol
     tree["Vtraxx"] = list(empresas.values())
 
@@ -159,7 +158,6 @@ def transformar_para_jstree(data):
                     "text": canal["channel_name"]
                 }
                 tree.append(canal_node)
-        print(tree)
     return json.dumps(tree, indent=4)
 
 
@@ -287,6 +285,7 @@ def monitoreo(request):
         return JsonResponse({"error": "No se pudo obtener información de los vehículos."}, status=500)
 
     tree = transformar_para_jstree(organizar_json(vehicle_data))
+
 
     return render(request, 'myapp/monitoreo.html', {
         'jsession': jsession,

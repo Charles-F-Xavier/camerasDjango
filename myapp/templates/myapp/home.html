@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
     <main class="py-2">
-        <div class="container-fluid">
+        <div class="container-fluid px-5">
             <div class="d-sm-flex row justify-content-lg-between justify-content-sm-center py-2">
                 <div class="col-sm-10 col-md-9 col-lg-9">
                     <div class="btn-group" role="group" aria-label="Layout buttons">
@@ -125,7 +125,7 @@
                                             </i>
                                         </h5>
 
-                                        <p class="card-text hidden" id="camera-port-{{ config.port }}">
+                                        <p class="card-text" style="display: none" id="camera-port-{{ config.port }}">
                                             {{ config.port }}
                                         </p>
 

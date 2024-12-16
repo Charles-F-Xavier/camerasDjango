@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    #django
     'channels',
     'myapp',
     'corsheaders',
@@ -40,6 +41,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # 2FA y OTP
+    'django_otp',
+    'django_otp.plugins.otp_totp',  # Para TOTP (Time-based OTP)
+    'two_factor',  # Implementación completa de 2FA
+    'qrcode',  # Generador de códigos QR
 ]
 
 CHANNEL_LAYERS = {
@@ -110,6 +117,15 @@ DATABASES = {
         'PORT': '3306',  # Puerto predeterminado para MySQL
     }
 }
+
+# URL de inicio de sesión
+LOGIN_URL = 'two_factor:login'
+LOGOUT_REDIRECT_URL = '/'
+
+# Backends de autenticación
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 
 # Password validation
