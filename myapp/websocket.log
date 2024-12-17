@@ -6564,6 +6564,7 @@ out connecting to WebSocket
 [2024-12-12T20:27:17.106Z] [Camera Port: 8004] WebSocket closed. Code: 1006, Reason: 
 [2024-12-12T20:27:18.100Z] [Camera Port: 8003] Error connecting to WebSocket: [object Event]
 [2024-12-12T20:27:18.102Z] [Camera Port: 8003] WebSocket closed. Code: 1006, Reason: 
+<<<<<<< HEAD
 [2024-12-15T03:03:49.129Z] [Camera Port: 8002] Error connecting to WebSocket: [object Event]
 [2024-12-15T03:03:49.130Z] [Camera Port: 8002] WebSocket closed. Code: 1006, Reason: 
 [2024-12-15T03:03:49.130Z] [Camera Port: 8004] Error connecting to WebSocket: [object Event]
@@ -8914,3 +8915,5 @@ out connecting to WebSocket
 [2024-12-16T19:39:01.210Z] [Camera Port: 8007] Error connecting to WebSocket: [object Event]
 [2024-12-16T19:39:01.211Z] [Camera Port: 8007] WebSocket closed. Code: 1006, Reason: 
 [2024-12-16T19:39:01.211Z] [Camera Port: 8007] Max reconnection attempts reached
+=======
+>>>>>>> parent of e62d9de (fix jsession)

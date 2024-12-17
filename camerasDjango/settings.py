@@ -131,8 +131,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'camerasDjango.wsgi.application'
 ASGI_APPLICATION = 'camerasDjango.asgi.application'
 
-STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'static'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases

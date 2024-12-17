@@ -28,7 +28,10 @@ urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),
     path('monitoreo/', views.monitoreo, name='monitoreo'),
     path('log-error/', views.log_error, name='log_error'),
+<<<<<<< HEAD
     path('load_camera_iframe/', views.load_camera_iframe, name='load_camera_iframe'),
     path('accounts/', include('allauth.urls')),  # Manejo de cuentas y OAuth
     path('/',include("myapp.urls")),
+=======
+>>>>>>> parent of e62d9de (fix jsession)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
