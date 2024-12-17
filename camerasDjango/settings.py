@@ -26,6 +26,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Configuración de sitios
+SITE_ID = 1
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -46,14 +49,9 @@ INSTALLED_APPS = [
     'allauth.account',  # Manejo de cuentas
     'allauth.socialaccount',  # Autenticación social
     'allauth.socialaccount.providers.google',  # Google OAuth
-    'django_otp',  # One-Time Password (OTP)
-    'django_otp.plugins.otp_totp',  # OTP basado en tiempo (TOTP)
-    'django_otp.plugins.otp_static',  # OTP con tokens estáticos
-    'two_factor',  # 2FA principal
-    'qrcode',  # Generación de códigos QR
 ]
 
-SOCIALACOUNT_PROVIDERS={
+SOCIALACCOUNT_PROVIDERS={
     "google": {
         "SCOPE": ["profile", "email"],
     },
@@ -62,8 +60,6 @@ SOCIALACOUNT_PROVIDERS={
     }
 }
 
-# Configuración de sitios
-SITE_ID = 1
 
 # Configuración de redirección después del inicio de sesión
 LOGIN_REDIRECT_URL = '/'
@@ -76,14 +72,14 @@ AUTHENTICATION_BACKENDS = (
 )
 
 # Configuración básica para django-allauth
-ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Permitir usuario o email
-ACCOUNT_EMAIL_REQUIRED = True                     # Email obligatorio
-ACCOUNT_USERNAME_REQUIRED = True                  # Username obligatorio
-ACCOUNT_SIGNUP_REDIRECT_URL = '/'                 # Redirección tras registro
-ACCOUNT_LOGIN_REDIRECT_URL = '/'                  # Redirección tras login
+#ACCOUNT_AUTHENTICATION_METHOD = 'username_email'  # Permitir usuario o email
+#ACCOUNT_EMAIL_REQUIRED = True                     # Email obligatorio
+#ACCOUNT_USERNAME_REQUIRED = True                  # Username obligatorio
+#ACCOUNT_SIGNUP_REDIRECT_URL = '/'                 # Redirección tras registro
+#ACCOUNT_LOGIN_REDIRECT_URL = '/'                  # Redirección tras login
 
 # Configuración de email (requerido para validación de cuentas)
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 CHANNEL_LAYERS = {
     "default": {

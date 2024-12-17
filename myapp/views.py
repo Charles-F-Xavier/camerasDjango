@@ -332,3 +332,7 @@ def log_error(request):
             return JsonResponse({'status': 'error', 'message': str(e)}, status=500)
     else:
         return JsonResponse({'status': 'error', 'message': 'Invalid request method'}, status=400)
+
+
+def logout(request):
+    return render(request, 'myapp/logout.html')
